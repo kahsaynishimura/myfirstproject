@@ -110,7 +110,6 @@ public class PracticeActivity extends ActionBarActivity {
             }
         }
 
-
         editor.commit();
     }
 
@@ -246,7 +245,7 @@ public class PracticeActivity extends ActionBarActivity {
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
 
-                if (exercises.size()  > sharedPreferences.getInt("exercise_count", 0)) {
+                if (exercises.size() > sharedPreferences.getInt("exercise_count", 0)) {
 
                     Intent i = new Intent(PracticeActivity.this, TransitionActivity.class);
                     startActivity(i);
@@ -305,27 +304,21 @@ public class PracticeActivity extends ActionBarActivity {
                         if (current.hasMoreScripts()) {
 
                             current.selectNextScript();
-                            runScriptEntry();
                         }
-                    }else {
-                        promptSpeechInput();
+
                     }
+
                 }
-
-
+                break;
             }
-            break;
-
         }
-
+        runScriptEntry();//user should not stop in the middle of the lesson.
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
-         TTS.shutdown();
-
+        TTS.shutdown();
     }
 
     public void checkConnection() {
