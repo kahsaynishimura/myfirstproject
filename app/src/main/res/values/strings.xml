@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">English App</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="no_connection_title">Not connected</string>
+    <string name="no_connection">No network connection was found.</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+
+
+    <string name="teens2">Teens 2</string>
+    <string name="w2">W 2</string>
+    <string-array name="books">
+        <item>@string/teens2</item>
+        <item>@string/w2</item>
+    </string-array>
+    <string name="title_activity_lesson">Choose your lesson</string>
+    <string name="title_activity_book">Choose your book</string>
+    <string name="title_activity_practice">Practice</string>
+    <string name="title_activity_transition">TransitionActivity</string>
+</resources>
