@@ -21,6 +21,11 @@
     <string name="title_activity_lesson">Choose your lesson</string>
     <string name="title_activity_book">Choose your book</string>
     <string name="title_activity_practice">Practice</string>
-    <string name="title_activity_transition">TransitionActivity</string>
-    <string name="title_activity_lesson_completed">LessonCompletedActivity</string>
+    <string name="title_activity_transition">One more exercise</string>
+    <string name="title_activity_lesson_completed">Congrats!</string>
+    <string name="go_to_next_lesson">Go to next lesson</string>
+    <string name="you_completed">You spoke</string>
+    <string name="correct_sentences_in_this_lesson">corrected sentences in this lesson.</string>
+    <string name="exit">Exit</string>
+    <string name="you_graduated_from">You graduated from</string>
 </resources>

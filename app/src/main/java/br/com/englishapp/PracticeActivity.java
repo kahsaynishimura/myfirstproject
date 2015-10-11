@@ -33,6 +33,7 @@ import java.util.Locale;
 import br.com.englishapp.model.CurrentPracticeData;
 import br.com.englishapp.model.DBHandler;
 import br.com.englishapp.model.Exercise;
+import br.com.englishapp.model.Lesson;
 import br.com.englishapp.model.ScriptEntry;
 
 import static br.com.englishapp.model.CurrentPracticeData.REQ_CODE_SPEECH_INPUT;
@@ -60,6 +61,7 @@ public class PracticeActivity extends ActionBarActivity {
 
         current = new CurrentPracticeData();
         Integer lessonId = sharedPreferences.getInt("lesson_id", 0);
+        updateTitleWithLessonName(lessonId);
         loadExercises(lessonId);
         current.setCurrentExercise(exercises.get(sharedPreferences.getInt("exercise_count", 0)));
 
@@ -374,4 +376,19 @@ public class PracticeActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public Lesson updateTitleWithLessonName(Integer lessonId) {
+        Lesson l=null;
+        try {
+            InputStream is = getAssets()
+                    .open(DBHandler.DATABASE_NAME);
+            db = new DBHandler(PracticeActivity.this, is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (db != null) {
+             l = db.findLesson(lessonId);
+            setTitle(l.getName());
+        }
+        return l;
+    }
 }
