@@ -74,11 +74,8 @@ public class PracticeActivity extends ActionBarActivity {
                     startExercise();
                 }
             });
-        } else {//There are no more exercises.
-            finish();
         }
         checkConnection();
-
     }
 
     public void startExercise() {
@@ -87,7 +84,6 @@ public class PracticeActivity extends ActionBarActivity {
 
     private Boolean hasMoreExercises() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-
         return exercises.size() > sharedPreferences.getInt("exercise_count", 0);
     }
 
@@ -96,7 +92,6 @@ public class PracticeActivity extends ActionBarActivity {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-
 
         current.setCurrentExercise(exercises.get(sharedPreferences.getInt("exercise_count", 0)));
 
@@ -135,7 +130,6 @@ public class PracticeActivity extends ActionBarActivity {
                 }
                 e.setScriptEntries(scripts);
             }
-
         }
     }
 
@@ -252,7 +246,7 @@ public class PracticeActivity extends ActionBarActivity {
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
                     current.setShouldRunScript(true);
-                }else{
+                } else {
                     Intent i = new Intent(PracticeActivity.this, LessonCompletedActivity.class);
                     startActivity(i);
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -298,7 +292,6 @@ public class PracticeActivity extends ActionBarActivity {
                     for (String r : result) {
                         hit = current.getCurrentScriptEntry().getTextToCheck().toLowerCase().replaceAll("[^a-zA-Z0-9]", "")
                                 .equals(r.toLowerCase().replaceAll("[^a-zA-Z0-9]", ""));
-
                         if (hit) {
                             break;
                         }
@@ -306,7 +299,6 @@ public class PracticeActivity extends ActionBarActivity {
 
                     if (hit) {
                         if (current.hasMoreScripts()) {
-
                             current.selectNextScript();
                         }
 
