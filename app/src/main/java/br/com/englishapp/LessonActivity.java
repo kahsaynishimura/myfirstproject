@@ -33,9 +33,9 @@ public class LessonActivity extends ActionBarActivity {
     }
 
     private void loadComponents() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(LessonActivity.this);
 
-        bookId = getIntent().getIntExtra("bookId", 1);
-        ArrayList<Lesson> lessons = getLessons(bookId);
+        ArrayList<Lesson> lessons = getLessons(sharedPreferences.getInt("book_id",1));
         final ArrayAdapter<Lesson> a = new LessonAdapter(LessonActivity.this, R.layout.lesson_list_item, lessons);
         ListView myLessons = (ListView) findViewById(R.id.lessons);
         myLessons.setAdapter(a);
@@ -52,6 +52,7 @@ public class LessonActivity extends ActionBarActivity {
                 editor.putInt("lesson_id", l.get_id());
                 editor.commit();
                 startActivity(i);
+                finish();
             }
         });
     }

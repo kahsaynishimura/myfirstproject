@@ -1,7 +1,9 @@
 package br.com.englishapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,9 +25,8 @@ public class BookActivity extends ActionBarActivity {
     private void loadComponents() {
 
 
-
         String[] books = getResources().getStringArray(R.array.books);
-        ArrayAdapter <String> a =
+        ArrayAdapter<String> a =
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, books);
 
         ListView myBooks = (ListView) findViewById(R.id.books);
@@ -35,7 +36,11 @@ public class BookActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(BookActivity.this, LessonActivity.class);
-                i.putExtra("bookId", ++position);
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(BookActivity.this);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                editor.putInt("book_id", ++position);//be careful with this fixed id for books. it presumes that in the database the book id is in orther
+                editor.commit();
                 startActivity(i);
             }
         });
