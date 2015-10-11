@@ -36,6 +36,10 @@
             android:name=".TransitionActivity"
             android:label="@string/title_activity_transition" >
         </activity>
+        <activity
+            android:name=".LessonCompletedActivity"
+            android:label="@string/title_activity_lesson_completed" >
+        </activity>
     </application>
 
 </manifest>
