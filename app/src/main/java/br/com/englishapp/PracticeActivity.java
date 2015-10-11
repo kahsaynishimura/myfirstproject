@@ -298,6 +298,10 @@ public class PracticeActivity extends ActionBarActivity {
                     }
 
                     if (hit) {
+                        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(PracticeActivity.this);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putInt("correct_sentence_count",sharedPreferences.getInt("correct_sentence_count",0)+1);
+                        editor.commit();
                         if (current.hasMoreScripts()) {
                             current.selectNextScript();
                         }
