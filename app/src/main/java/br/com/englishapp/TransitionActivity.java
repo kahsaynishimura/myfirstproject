@@ -25,7 +25,6 @@ public class TransitionActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transition);
 
-
         ImageView img = (ImageView) findViewById(R.id.exercise_image);
 
         new Handler().postDelayed(new Runnable() {
