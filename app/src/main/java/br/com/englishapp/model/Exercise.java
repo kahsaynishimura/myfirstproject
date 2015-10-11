@@ -9,12 +9,14 @@ import java.util.List;
 public class Exercise {
     private Integer _id;
     private String name;
+    private String transitionImage;
     private Lesson Lesson; //belongs to one lesson
     private ArrayList<ScriptEntry> scriptEntries;//has many script entries
 
-    public Exercise(Integer id, String name, Lesson lesson) {
+    public Exercise(Integer id, String name,String transitionImage, Lesson lesson) {
         _id = id;
         this.name = name;
+        this.transitionImage = transitionImage;
         Lesson = lesson;
     }
 
@@ -52,5 +54,13 @@ public class Exercise {
 
     public void setScriptEntries(ArrayList<ScriptEntry> scriptEntries) {
         this.scriptEntries = scriptEntries;
+    }
+
+    public String getTransitionImage() {
+        return transitionImage;
+    }
+
+    public void setTransitionImage(String transitionImage) {
+        this.transitionImage = transitionImage;
     }
 }

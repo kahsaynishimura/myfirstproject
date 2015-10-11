@@ -29,7 +29,6 @@ public class LessonCompletedActivity extends ActionBarActivity {
 
         txt.setText(getString(R.string.you_completed) + " " + correctSentenceCount + " " + getString(R.string.correct_sentences_in_this_lesson));
 
-
         ArrayList<Lesson> lessons = getLessons(sharedPreferences.getInt("book_id", 1));
         Lesson lastLesson = lessons.get(lessons.size() - 1);
         Integer lessonId = sharedPreferences.getInt("lesson_id", 0);

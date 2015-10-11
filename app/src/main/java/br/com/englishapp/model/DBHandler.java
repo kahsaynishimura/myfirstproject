@@ -37,6 +37,7 @@ public class DBHandler {
     private static final String COLUMN_NAME = "name";
     private static final String COLUMN_BOOK_ID = "book_id";
     private static final String COLUMN_TEXT_TO_SHOW = "text_to_show";
+    private static final String COLUMN_TRANSITION_IMAGE = "transition_image";
     private static final String COLUMN_TEXT_TO_CHECK = "text_to_check";
     private static final String COLUMN_SCRIPT_INDEX = "script_index";
     private static final String COLUMN_TEXT_TO_READ = "text_to_read";
@@ -97,14 +98,34 @@ public class DBHandler {
         open();
         Cursor c = db.query(TABLE_LESSON,
                 new String[]{COLUMN_NAME
-                       },
+                },
                 COLUMN_ID + "= ? ", new String[]{lessonId.toString()},
                 null, null, null, null);
         if (c.moveToFirst()) {
             do {
 
-               e.setName(c.getString(0));
-                 } while (c.moveToNext());
+                e.setName(c.getString(0));
+            } while (c.moveToNext());
+        }
+        close();
+
+        return e;
+    }
+
+    public Exercise findExercise(Integer exerciseId) {
+        Exercise e = new Exercise();
+        open();
+        Cursor c = db.query(TABLE_EXERCISE,
+                new String[]{COLUMN_NAME, COLUMN_TRANSITION_IMAGE
+                },
+                COLUMN_ID + "= ? ", new String[]{exerciseId.toString()},
+                null, null, null, null);
+        if (c.moveToFirst()) {
+            do {
+
+                e.setName(c.getString(0));
+                e.setTransitionImage(c.getString(1));
+            } while (c.moveToNext());
         }
         close();
 
@@ -168,145 +189,19 @@ public class DBHandler {
         ArrayList<Exercise> exercises = new ArrayList<>();
         open();
         Cursor c = db.query(TABLE_EXERCISE,
-                new String[]{COLUMN_ID, COLUMN_NAME, COLUMN_LESSON_ID},
+                new String[]{COLUMN_ID, COLUMN_NAME, COLUMN_TRANSITION_IMAGE, COLUMN_LESSON_ID},
                 COLUMN_LESSON_ID + "= ? ", new String[]{lessonId.toString()},
                 null, null, null, null);
         if (c.moveToFirst()) {
             do {
                 Lesson lesson = new Lesson();
                 lesson.set_id(lessonId);
-                exercises.add(new Exercise(c.getInt(0), c.getString(1), lesson));
+                exercises.add(new Exercise(c.getInt(0), c.getString(1), c.getString(2), lesson));
             } while (c.moveToNext());
         }
         close();
 
         return exercises;
     }
-/*
-    public ArrayList<Section> findSections() {
-        ArrayList<Section> sections = new ArrayList<>();
-        open();
-        Cursor c = db.query(TABLE_SECTIONS,
-                new String[]{COLUMN_ID, COLUMN_TITLE},
-                null, null,
-                null, null, null, null);
-        if (c.moveToFirst()) {
-            do {
-                sections.add(new Section(c.getInt(0), c.getString(1)));
-            } while (c.moveToNext());
-        }
-        close();
-
-        return sections;
-    }
-
-    public ArrayList<WebViewComponent> findWebViews(Integer sectionId) {
-        ArrayList<WebViewComponent> webViews = new ArrayList<>();
-        open();
-        Cursor c = db.query(TABLE_WEBVIEWS,
-                new String[]{COLUMN_ID, COLUMN_SEQUENCE_NUMBER, COLUMN_TEXT_CONTENT},
-                COLUMN_SECTION_ID + "= ? ", new String[]{sectionId.toString()},
-                null, null, null, null);
-        if (c.moveToFirst()) {
-            Integer index = 0;
-            do {
-                Section section = new Section();
-                section.setId(sectionId);
-                webViews.add(new WebViewComponent(c.getInt(0), section, c.getInt(1), index, c.getString(2)));
-                index++;
-            } while (c.moveToNext());
-        }
-        close();
-
-        return webViews;
-    }
-
-    public ArrayList<ImageComponent> findImages(Integer sectionId) {
-        ArrayList<ImageComponent> images = new ArrayList<>();
-        open();
-        Cursor c = db.query(TABLE_IMAGES,
-                new String[]{COLUMN_ID, COLUMN_RESOURCE_NAME, COLUMN_SEQUENCE_NUMBER},
-                COLUMN_SECTION_ID + "= ? ", new String[]{sectionId.toString()},
-                null, null, null, null);
-
-        if (c.moveToFirst()) {
-            Integer index = 0;
-            do {
-                Section section = new Section();
-                section.setId(sectionId);
-                images.add(new ImageComponent(c.getInt(0), section, c.getString(1), c.getInt(2), index));
-                index++;
-            } while (c.moveToNext());
-        }
-        close();
-
-        return images;
-    }
-
-    public ArrayList<ButtonComponent> findButtons(Integer sectionId) {
-        ArrayList<ButtonComponent> buttons = new ArrayList<>();
-        open();
-        Cursor c = db.query(TABLE_BUTTONS,
-                new String[]{COLUMN_ID, COLUMN_SEQUENCE_NUMBER, COLUMN_NAME},
-                COLUMN_SECTION_ID + "= ? ", new String[]{sectionId.toString()},
-                null, null, null, null);
-        if (c.moveToFirst()) {
-            Integer index = 0;
-            do {
-
-                Section section = new Section();
-                section.setId(sectionId);
-                buttons.add(new ButtonComponent(c.getInt(0), section, c.getInt(1), index, c.getString(2)));
-                index++;
-            } while (c.moveToNext());
-        }
-        close();
-
-        return buttons;
-    }
-
-    public ArrayList<SafetyBlockComponent> findSafetyBlocks(Integer sectionId) {
-        ArrayList<SafetyBlockComponent> blocks = new ArrayList<>();
-        open();
-        Cursor c = db.query(TABLE_SAFETY_BLOCKS,
-                new String[]{COLUMN_ID, COLUMN_SEQUENCE_NUMBER, COLUMN_TEXT_CONTENT},
-                COLUMN_SECTION_ID + "= ? ", new String[]{sectionId.toString()},
-                null, null, null, null);
-        if (c.moveToFirst()) {
-            Integer index = 0;
-            do {
-
-                Section section = new Section();
-                section.setId(sectionId);
-                blocks.add(new SafetyBlockComponent(c.getInt(0), section, c.getInt(1), index, c.getString(2)));
-                index++;
-            } while (c.moveToNext());
-        }
-        close();
-
-        return blocks;
-    }
-
-    public ArrayList<CustomTrainingComponent> findCustomTrainingScreens(Integer sectionId) {
-        ArrayList<CustomTrainingComponent> customTrainings = new ArrayList<>();
-        open();
-        Cursor c = db.query(TABLE_CUSTOM_TRAINING,
-                new String[]{COLUMN_ID, COLUMN_SEQUENCE_NUMBER, COLUMN_LABEL},
-                COLUMN_SECTION_ID + "= ? ", new String[]{sectionId.toString()},
-                null, null, null, null);
-        if (c.moveToFirst()) {
-            Integer index = 0;
-            do {
-                Section section = new Section();
-                section.setId(sectionId);
-                customTrainings.add(new CustomTrainingComponent(c.getInt(0), section, c.getInt(1), index, c.getString(2)));
-                index++;
-            } while (c.moveToNext());
-        }
-        close();
-
-        return customTrainings;
-    }
-*/
 
 }
