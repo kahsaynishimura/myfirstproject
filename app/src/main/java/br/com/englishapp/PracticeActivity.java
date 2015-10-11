@@ -157,7 +157,7 @@ public class PracticeActivity extends ActionBarActivity {
 
 
                             child.setLayoutParams(params);
-                            ArrayList<TextView> items = new ArrayList<TextView>();
+                            ArrayList<TextView> items = new ArrayList<>();
 
                             items.add(child);
                             for (int i = parent.getChildCount() - 1; i >= 0; i--) {
@@ -252,6 +252,10 @@ public class PracticeActivity extends ActionBarActivity {
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
                     current.setShouldRunScript(true);
+                }else{
+                    Intent i = new Intent(PracticeActivity.this, LessonCompletedActivity.class);
+                    startActivity(i);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
                 finish();
             }
