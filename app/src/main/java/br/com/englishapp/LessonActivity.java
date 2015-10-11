@@ -49,6 +49,7 @@ public class LessonActivity extends ActionBarActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
                 editor.putInt("exercise_count", 0);
+                editor.putInt("correct_sentence_count",0);
                 editor.putInt("lesson_id", l.get_id());
                 editor.commit();
                 startActivity(i);

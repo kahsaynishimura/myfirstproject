@@ -17,20 +17,23 @@ import br.com.englishapp.model.DBHandler;
 import br.com.englishapp.model.Lesson;
 
 public class LessonCompletedActivity extends ActionBarActivity {
-
+    TextView txt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_completed);
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(LessonCompletedActivity.this);
+        txt =(TextView) findViewById(R.id.txt_message);
+        Integer correctSentenceCount = sharedPreferences.getInt("correct_sentence_count", 0);
+
+        txt.setText("Você completou " + correctSentenceCount + " frases corretas nesta lição");
+
 
         ArrayList<Lesson> lessons = getLessons(sharedPreferences.getInt("book_id", 1));
         Lesson lastLesson = lessons.get(lessons.size() - 1);
         Integer lessonId = sharedPreferences.getInt("lesson_id", 0);
-        if (lessonId == lastLesson.get_id()) {
-           TextView txtBookName=(TextView) findViewById(R.id.txt_book_name);
-            txtBookName.setText(getBookName(sharedPreferences.getInt("book_id",1)));
-            txtBookName.setVisibility(View.VISIBLE);
+        if (lessonId == lastLesson.get_id()) {//se foi a ultima lição, mostra o certificado
+            txt.setText(getBookName(sharedPreferences.getInt("book_id", 1)));
             ImageButton img=   (ImageButton) findViewById(R.id.congrats_image);
             img.setBackground(getDrawable(R.drawable.graduated));
             img.setOnClickListener(new View.OnClickListener() {
@@ -48,10 +51,11 @@ public class LessonCompletedActivity extends ActionBarActivity {
         ArrayList<Lesson> lessons = getLessons(sharedPreferences.getInt("book_id", 1));
         Lesson lastLesson = lessons.get(lessons.size() - 1);
         Integer lessonId = sharedPreferences.getInt("lesson_id", 0);
-        if (lessonId != lastLesson.get_id()) {//if that was the last lesson, just close the activity
+        if (lessonId != lastLesson.get_id()) {//if that was not the last lesson, start the next one
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("exercise_count", 0);
             editor.putInt("lesson_id", (lessonId + 1));
+            editor.putInt("correct_sentence_count",0);
             editor.commit();
 
             Intent i = new Intent(LessonCompletedActivity.this, TransitionActivity.class);
