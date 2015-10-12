@@ -6,8 +6,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
@@ -23,6 +25,7 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -176,7 +179,7 @@ public class PracticeActivity extends ActionBarActivity {
 
                     switch (s.getFunctionId()) {
 
-                        case 1://The device is to speak the text_to_read (used to give instructions about the exercises)
+                        case 1://The device is to speak (tts) the text_to_read (used to give instructions about the exercises)
 
 
                             TTS.setOnUtteranceProgressListener(new UtteranceProgressListener() {
@@ -205,7 +208,7 @@ public class PracticeActivity extends ActionBarActivity {
                             break;
 
                         case 2:
-                            //The device is to Read text, Show sentence- tts, Listen to speech, Check against database info= stt. Listen and compare.
+                            //The device is to Read text(tts), Show sentence- tts, Listen to speech, Check against database info= stt. Listen and compare.
 
                             TTS.setOnUtteranceProgressListener(new UtteranceProgressListener() {
                                 @Override
@@ -228,8 +231,71 @@ public class PracticeActivity extends ActionBarActivity {
 
                             break;
 
-                        case 3://only checks the speech
+                        case 3:
+                        //only checks the speech -> do not provide any kind of model
+                        // (neither spoken by the device nor on video)
                             promptSpeechInput();
+                            break;
+                        case 4:
+                        //shows video and asks for audio input then checks audio
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    final VideoView v = new VideoView(PracticeActivity.this);
+                                    final RelativeLayout r = (RelativeLayout) findViewById(R.id.container_practice);
+                                    r.addView(v);
+                                    int videoResource = getResources().getIdentifier("raw/" + s.getTextToRead(), null, getPackageName());
+
+                                    String path = "android.resource://" + getPackageName() + "/" + videoResource;
+                                    v.setVideoURI(Uri.parse(path));
+                                    v.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mp) {
+                                            r.removeView(v);
+                                            promptSpeechInput();
+                                        }
+                                    });
+                                    v.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                                        @Override
+                                        public void onPrepared(MediaPlayer mp) {
+
+                                            v.start();
+                                        }
+                                    });
+                                }
+                            });
+
+                            break;
+                        case 5://only shows a video containing instructions. do not ask for audio back
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    final VideoView v = new VideoView(PracticeActivity.this);
+                                    final RelativeLayout r = (RelativeLayout) findViewById(R.id.container_practice);
+                                    r.addView(v);
+                                    int videoResource = getResources().getIdentifier("raw/" + s.getTextToRead(), null, getPackageName());
+
+                                    String path = "android.resource://" + getPackageName() + "/" + videoResource;
+                                    v.setVideoURI(Uri.parse(path));
+                                    v.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mp) {
+                                            r.removeView(v);
+                                            current.setShouldRunScript(true);
+                                            current.selectNextScript();
+                                            runScriptEntry();
+                                        }
+                                    });
+                                    v.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                                        @Override
+                                        public void onPrepared(MediaPlayer mp) {
+
+                                            v.start();
+                                        }
+                                    });
+                                }
+                            });
+
                             break;
                     }
 
@@ -302,7 +368,7 @@ public class PracticeActivity extends ActionBarActivity {
                     if (hit) {
                         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(PracticeActivity.this);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putInt("correct_sentence_count",sharedPreferences.getInt("correct_sentence_count",0)+1);
+                        editor.putInt("correct_sentence_count", sharedPreferences.getInt("correct_sentence_count", 0) + 1);
                         editor.commit();
                         if (current.hasMoreScripts()) {
                             current.selectNextScript();
@@ -377,7 +443,7 @@ public class PracticeActivity extends ActionBarActivity {
     }
 
     public Lesson updateTitleWithLessonName(Integer lessonId) {
-        Lesson l=null;
+        Lesson l = null;
         try {
             InputStream is = getAssets()
                     .open(DBHandler.DATABASE_NAME);
@@ -386,7 +452,7 @@ public class PracticeActivity extends ActionBarActivity {
             e.printStackTrace();
         }
         if (db != null) {
-             l = db.findLesson(lessonId);
+            l = db.findLesson(lessonId);
             setTitle(l.getName());
         }
         return l;
