@@ -1,7 +1,6 @@
 package br.com.englishapp;
 
 import android.app.AlertDialog;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,27 +10,32 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
+import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Locale;
 
 import br.com.englishapp.model.CurrentPracticeData;
 import br.com.englishapp.model.DBHandler;
@@ -39,22 +43,25 @@ import br.com.englishapp.model.Exercise;
 import br.com.englishapp.model.Lesson;
 import br.com.englishapp.model.ScriptEntry;
 
-import static br.com.englishapp.model.CurrentPracticeData.REQ_CODE_SPEECH_INPUT;
-
 //This class handles the screen that will execute the scripts the user is supposed to practice-> the sentences.
 
 public class PracticeActivity extends ActionBarActivity {
 
 
-    CurrentPracticeData current;//stores current screen info - current screen state
+    private static final long TRANSITION_PAUSE = 1000;
+    private ProgressBar progressBar;
+    private SpeechRecognizer speech = null;
+    private Intent recognizerIntent;
 
+    private String LOG_TAG = "PracticeActivity";
+
+    CurrentPracticeData current;//stores current screen info - current screen state
     private ArrayList<Exercise> exercises;
     private TextToSpeech TTS;
     private DBHandler db;
-
-
     private RelativeLayout listLayout;
     public final long INSTRUCTION_PAUSE = 1000;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +77,16 @@ public class PracticeActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_practice);
 
+        progressBar = (ProgressBar) findViewById(R.id.progressBar1);
+        speech = SpeechRecognizer.createSpeechRecognizer(PracticeActivity.this);
+        speech.setRecognitionListener(new CustomSpeechRecognition());
+        recognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, "en_US");
+        recognizerIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName());
+        recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
+        recognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 3);
+
+
         if (hasMoreExercises()) {
             selectNextExercise();
             TTS = new TextToSpeech(PracticeActivity.this, new TextToSpeech.OnInitListener() {
@@ -84,6 +101,13 @@ public class PracticeActivity extends ActionBarActivity {
     }
 
     public void startExercise() {
+        runScriptEntry();
+    }
+
+    /*Whenever tryAgain is called, the function runscriptentry is allowed because the variable shouldRunScript was changed to true*/
+    public void tryAgain(View v) {
+        ((Button) findViewById(R.id.btn)).setVisibility(View.GONE);
+        current.setShouldRunScript(true);
         runScriptEntry();
     }
 
@@ -140,6 +164,9 @@ public class PracticeActivity extends ActionBarActivity {
 
     private void runScriptEntry() {
         if (current.getShouldRunScript()) {
+            ((Button) findViewById(R.id.btn)).setVisibility(View.GONE);
+            current.setShouldRunScript(false);//prove to me again that I can execute everything ->go to the next exercise.
+
             if (current.getCurrentScriptIndex() < current.getCurrentExercise().getScriptEntries().size()) {
 
                 final ScriptEntry s = current.getCurrentScriptEntry();
@@ -150,7 +177,7 @@ public class PracticeActivity extends ActionBarActivity {
                         public void run() {
 
                             TextView child = new TextView(PracticeActivity.this);
-                            LinearLayout parent = (LinearLayout) findViewById(R.id.sentences);
+                            LinearLayout parent = (LinearLayout) findViewById(R.id.contentFrame);
                             child.setText(s.getTextToShow());
                             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
@@ -162,11 +189,8 @@ public class PracticeActivity extends ActionBarActivity {
                             for (int i = parent.getChildCount() - 1; i >= 0; i--) {
                                 TextView t = (TextView) parent.getChildAt(i);
                                 parent.removeViewAt(i);
-                                items.add(t);
                             }
-                            for (TextView t : items) {
-                                parent.addView(t);
-                            }
+                            parent.addView(child);
                             ((ScrollView) findViewById(R.id.scrollView)).fullScroll(ScrollView.FOCUS_UP);
 
                         }
@@ -176,11 +200,9 @@ public class PracticeActivity extends ActionBarActivity {
                     Bundle b = new Bundle();
                     b.putString(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, s.get_id().toString());
 
-
                     switch (s.getFunctionId()) {
 
                         case 1://The device is to speak (tts) the text_to_read (used to give instructions about the exercises)
-
 
                             TTS.setOnUtteranceProgressListener(new UtteranceProgressListener() {
                                 @Override
@@ -232,12 +254,18 @@ public class PracticeActivity extends ActionBarActivity {
                             break;
 
                         case 3:
-                        //only checks the speech -> do not provide any kind of model
-                        // (neither spoken by the device nor on video)
-                            promptSpeechInput();
+                            //only checks the speech -> do not provide any kind of model
+                            // (neither spoken by the device nor on video)
+//                            this method needs a little more time, for the sake of uability, to ask for the nest input. Users were getting confused about the sounds built in the Voice Recognition
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    promptSpeechInput();
+                                }
+                            }, TRANSITION_PAUSE);
                             break;
                         case 4:
-                        //shows video and asks for audio input then checks audio
+                            //shows video and asks for audio input then checks audio
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -301,8 +329,6 @@ public class PracticeActivity extends ActionBarActivity {
 
                 }
 
-                current.setShouldRunScript(false);//prove to me again that I can execute everything ->go to the next exercise.
-
             } else { //exercise completed
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -325,62 +351,18 @@ public class PracticeActivity extends ActionBarActivity {
     }
 
     /**
-     * Showing google speech input dialog
+     * Showing google speech input dialog ->starts listening to audio input
      */
+
     private void promptSpeechInput() {
-        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
-                current.getCurrentScriptEntry().getTextToShow());
-        try {
-            startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
-        } catch (ActivityNotFoundException a) {
-            Toast.makeText(getApplicationContext(),
-                    getString(R.string.speech_not_supported),
-                    Toast.LENGTH_SHORT).show();
-        }
-    }
 
-    /**
-     * Receiving speech input
-     */
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        switch (requestCode) {
-            case REQ_CODE_SPEECH_INPUT: {
-                current.setShouldRunScript(true);
-                if (resultCode == RESULT_OK && null != data) {
-                    ArrayList<String> result = data
-                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    Boolean hit = false;
-                    for (String r : result) {
-                        hit = current.getCurrentScriptEntry().getTextToCheck().toLowerCase().replaceAll("[^a-zA-Z0-9]", "")
-                                .equals(r.toLowerCase().replaceAll("[^a-zA-Z0-9]", ""));
-                        if (hit) {
-                            break;
-                        }
-                    }
-
-                    if (hit) {
-                        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(PracticeActivity.this);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putInt("correct_sentence_count", sharedPreferences.getInt("correct_sentence_count", 0) + 1);
-                        editor.commit();
-                        if (current.hasMoreScripts()) {
-                            current.selectNextScript();
-                        }
-
-                    }
-
-                }
-                break;
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                speech.startListening(recognizerIntent);
             }
-        }
-        runScriptEntry();//user should not stop in the middle of the lesson.
+        });
+
     }
 
     @Override
@@ -388,6 +370,135 @@ public class PracticeActivity extends ActionBarActivity {
         super.onDestroy();
         TTS.shutdown();
     }
+
+
+    class CustomSpeechRecognition implements RecognitionListener {
+        @Override
+        public void onReadyForSpeech(Bundle params) {
+
+            progressBar.setVisibility(View.VISIBLE);
+            progressBar.setIndeterminate(true);
+            Log.i(LOG_TAG, "onReadyForSpeech");
+        }
+
+        @Override
+        public void onBeginningOfSpeech() {
+
+            Log.i(LOG_TAG, "onBeginningOfSpeech");
+            progressBar.setIndeterminate(false);
+            progressBar.setMax(10);
+        }
+
+        @Override
+        public void onRmsChanged(float rmsdB) {
+
+            // Log.i(LOG_TAG, "onRmsChanged");
+            progressBar.setProgress((int) rmsdB);
+        }
+
+        @Override
+        public void onBufferReceived(byte[] buffer) {
+
+            Log.i(LOG_TAG, "onBufferReceived");
+        }
+
+        @Override
+        public void onEndOfSpeech() {
+
+            Log.i(LOG_TAG, "onEndOfSpeech");
+            speech.stopListening();
+        }
+
+        @Override
+        public void onError(int error) {
+            progressBar.setIndeterminate(false);
+
+            progressBar.setProgress(0);
+            speech.cancel();
+            ((Button) findViewById(R.id.btn)).setVisibility(View.VISIBLE);
+
+            Log.i(LOG_TAG, "onError: " + getErrorText(error));
+        }
+
+        public String getErrorText(int errorCode) {
+            String message = errorCode + "";
+            switch (errorCode) {
+                case SpeechRecognizer.ERROR_AUDIO:
+                    message += "Audio recording error";
+                    break;
+                case SpeechRecognizer.ERROR_CLIENT:
+                    message += "Client side error";
+                    break;
+                case SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS:
+                    message += "Insufficient permissions";
+                    break;
+                case SpeechRecognizer.ERROR_NETWORK:
+                    message += "Network error";
+                    break;
+                case SpeechRecognizer.ERROR_NETWORK_TIMEOUT:
+                    message += "Network timeout";
+                    break;
+                case SpeechRecognizer.ERROR_NO_MATCH:
+                    message += "No match";
+                    break;
+                case SpeechRecognizer.ERROR_RECOGNIZER_BUSY:
+                    message += "RecognitionService busy";
+                    break;
+                case SpeechRecognizer.ERROR_SERVER:
+                    message += "error from server";
+                    break;
+                case SpeechRecognizer.ERROR_SPEECH_TIMEOUT:
+                    message += "No speech input";
+                    break;
+                default:
+                    message += "Didn't understand, please try again.";
+                    break;
+            }
+            return message;
+        }
+
+        @Override
+        public void onResults(Bundle results) {
+
+            Log.i(LOG_TAG, "onResults");
+            ArrayList<String> matches = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+
+            Boolean hit = false;
+            for (String r : matches) {
+                hit = current.getCurrentScriptEntry().getTextToCheck().toLowerCase().replaceAll("[^a-zA-Z0-9]", "")
+                        .equals(r.toLowerCase().replaceAll("[^a-zA-Z0-9]", ""));
+                if (hit) {
+                    break;
+                }
+            }
+
+            if (hit) {
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(PracticeActivity.this);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("correct_sentence_count", sharedPreferences.getInt("correct_sentence_count", 0) + 1);
+                editor.commit();
+                if (current.hasMoreScripts()) {
+                    current.selectNextScript();
+                }
+
+            }
+            current.setShouldRunScript(true);
+            runScriptEntry();//user should not stop in the middle of the lesson.
+        }
+
+        @Override
+        public void onPartialResults(Bundle partialResults) {
+
+            Log.i(LOG_TAG, "onPartialResults");
+        }
+
+        @Override
+        public void onEvent(int eventType, Bundle params) {
+
+            Log.i(LOG_TAG, "onEvent");
+        }
+    }
+
 
     public void checkConnection() {
         ConnectivityManager cm =
@@ -420,6 +531,23 @@ public class PracticeActivity extends ActionBarActivity {
         }
     }
 
+
+    public Lesson updateTitleWithLessonName(Integer lessonId) {
+        Lesson l = null;
+        try {
+            InputStream is = getAssets()
+                    .open(DBHandler.DATABASE_NAME);
+            db = new DBHandler(PracticeActivity.this, is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (db != null) {
+            l = db.findLesson(lessonId);
+            setTitle(l.getName());
+        }
+        return l;
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -440,21 +568,5 @@ public class PracticeActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public Lesson updateTitleWithLessonName(Integer lessonId) {
-        Lesson l = null;
-        try {
-            InputStream is = getAssets()
-                    .open(DBHandler.DATABASE_NAME);
-            db = new DBHandler(PracticeActivity.this, is);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (db != null) {
-            l = db.findLesson(lessonId);
-            setTitle(l.getName());
-        }
-        return l;
     }
 }
