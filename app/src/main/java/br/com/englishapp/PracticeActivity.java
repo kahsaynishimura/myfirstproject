@@ -25,6 +25,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -383,7 +384,6 @@ public class PracticeActivity extends ActionBarActivity {
 
         @Override
         public void onBeginningOfSpeech() {
-
             Log.i(LOG_TAG, "onBeginningOfSpeech");
             progressBar.setIndeterminate(false);
             progressBar.setMax(10);
@@ -392,8 +392,30 @@ public class PracticeActivity extends ActionBarActivity {
         @Override
         public void onRmsChanged(float rmsdB) {
 
+            switch ( (int) rmsdB){
+                case 1:case 2:
+
+                    ((ImageButton) findViewById(R.id.micButton)).setImageDrawable(getDrawable(R.drawable.mic_1));break;
+                case 3:case 4:
+
+                    ((ImageButton) findViewById(R.id.micButton)).setImageDrawable(getDrawable(R.drawable.mic_3));break;
+                case 5:case 6:
+
+                    ((ImageButton) findViewById(R.id.micButton)).setImageDrawable(getDrawable(R.drawable.mic_5));break;
+                case 7:case 8:
+
+                    ((ImageButton) findViewById(R.id.micButton)).setImageDrawable(getDrawable(R.drawable.mic_7));break;
+                case 9:case 10:
+
+                    ((ImageButton) findViewById(R.id.micButton)).setImageDrawable(getDrawable(R.drawable.mic_10));break;
+                default:
+                    ((ImageButton) findViewById(R.id.micButton)).setImageDrawable(getDrawable(R.drawable.mic_0));break;
+            }
+
             // Log.i(LOG_TAG, "onRmsChanged");
             progressBar.setProgress((int) rmsdB);
+
+
         }
 
         @Override
