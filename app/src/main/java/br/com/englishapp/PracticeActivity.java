@@ -21,13 +21,13 @@ import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -50,7 +50,6 @@ public class PracticeActivity extends ActionBarActivity {
 
 
     private static final long TRANSITION_PAUSE = 1000;
-    private ProgressBar progressBar;
     private SpeechRecognizer speech = null;
     private Intent recognizerIntent;
 
@@ -78,7 +77,6 @@ public class PracticeActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_practice);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar1);
         speech = SpeechRecognizer.createSpeechRecognizer(PracticeActivity.this);
         speech.setRecognitionListener(new CustomSpeechRecognition());
         recognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -107,7 +105,7 @@ public class PracticeActivity extends ActionBarActivity {
 
     /*Whenever tryAgain is called, the function runscriptentry is allowed because the variable shouldRunScript was changed to true*/
     public void tryAgain(View v) {
-        ((Button) findViewById(R.id.btn)).setVisibility(View.GONE);
+        ((Button) findViewById(R.id.btn_try_again)).setVisibility(View.GONE);
         current.setShouldRunScript(true);
         runScriptEntry();
     }
@@ -165,7 +163,7 @@ public class PracticeActivity extends ActionBarActivity {
 
     private void runScriptEntry() {
         if (current.getShouldRunScript()) {
-            ((Button) findViewById(R.id.btn)).setVisibility(View.GONE);
+            ((Button) findViewById(R.id.btn_try_again)).setVisibility(View.GONE);
             current.setShouldRunScript(false);//prove to me again that I can execute everything ->go to the next exercise.
 
             if (current.getCurrentScriptIndex() < current.getCurrentExercise().getScriptEntries().size()) {
@@ -178,9 +176,11 @@ public class PracticeActivity extends ActionBarActivity {
                         public void run() {
 
                             TextView child = new TextView(PracticeActivity.this);
+                            child.setTextSize(20f);
+
                             LinearLayout parent = (LinearLayout) findViewById(R.id.contentFrame);
                             child.setText(s.getTextToShow());
-                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
 
                             child.setLayoutParams(params);
@@ -192,7 +192,6 @@ public class PracticeActivity extends ActionBarActivity {
                                 parent.removeViewAt(i);
                             }
                             parent.addView(child);
-                            ((ScrollView) findViewById(R.id.scrollView)).fullScroll(ScrollView.FOCUS_UP);
 
                         }
                     });
@@ -271,7 +270,8 @@ public class PracticeActivity extends ActionBarActivity {
                                 @Override
                                 public void run() {
                                     final VideoView v = new VideoView(PracticeActivity.this);
-                                    final RelativeLayout r = (RelativeLayout) findViewById(R.id.container_practice);
+                                    final LinearLayout r = (LinearLayout) findViewById(R.id.videoFrame);
+                                    r.setVisibility(View.VISIBLE);
                                     r.addView(v);
                                     int videoResource = getResources().getIdentifier("raw/" + s.getTextToRead(), null, getPackageName());
 
@@ -300,7 +300,8 @@ public class PracticeActivity extends ActionBarActivity {
                                 @Override
                                 public void run() {
                                     final VideoView v = new VideoView(PracticeActivity.this);
-                                    final RelativeLayout r = (RelativeLayout) findViewById(R.id.container_practice);
+                                    final LinearLayout r = (LinearLayout) findViewById(R.id.videoFrame);
+                                    r.setVisibility(View.VISIBLE);
                                     r.addView(v);
                                     int videoResource = getResources().getIdentifier("raw/" + s.getTextToRead(), null, getPackageName());
 
@@ -360,6 +361,8 @@ public class PracticeActivity extends ActionBarActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
+
+
                 speech.startListening(recognizerIntent);
             }
         });
@@ -374,48 +377,55 @@ public class PracticeActivity extends ActionBarActivity {
 
 
     class CustomSpeechRecognition implements RecognitionListener {
+        Boolean beganSpeech = false;
+
         @Override
         public void onReadyForSpeech(Bundle params) {
 
-            progressBar.setVisibility(View.VISIBLE);
-            progressBar.setIndeterminate(true);
+            ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_0_enabled));
+
             Log.i(LOG_TAG, "onReadyForSpeech");
         }
 
         @Override
         public void onBeginningOfSpeech() {
             Log.i(LOG_TAG, "onBeginningOfSpeech");
-            progressBar.setIndeterminate(false);
-            progressBar.setMax(10);
+            beganSpeech = true;
         }
 
         @Override
         public void onRmsChanged(float rmsdB) {
 
-            switch ( (int) rmsdB){
-                case 1:case 2:
-
-                    ((ImageButton) findViewById(R.id.micButton)).setImageDrawable(getDrawable(R.drawable.mic_1));break;
-                case 3:case 4:
-
-                    ((ImageButton) findViewById(R.id.micButton)).setImageDrawable(getDrawable(R.drawable.mic_3));break;
-                case 5:case 6:
-
-                    ((ImageButton) findViewById(R.id.micButton)).setImageDrawable(getDrawable(R.drawable.mic_5));break;
-                case 7:case 8:
-
-                    ((ImageButton) findViewById(R.id.micButton)).setImageDrawable(getDrawable(R.drawable.mic_7));break;
-                case 9:case 10:
-
-                    ((ImageButton) findViewById(R.id.micButton)).setImageDrawable(getDrawable(R.drawable.mic_10));break;
-                default:
-                    ((ImageButton) findViewById(R.id.micButton)).setImageDrawable(getDrawable(R.drawable.mic_0));break;
-            }
-
             // Log.i(LOG_TAG, "onRmsChanged");
-            progressBar.setProgress((int) rmsdB);
 
-
+            if (beganSpeech == true) {
+                switch ((int) rmsdB) {
+                    case 1:
+                    case 2:
+                        ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_1));
+                        break;
+                    case 3:
+                    case 4:
+                        ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_3));
+                        break;
+                    case 5:
+                    case 6:
+                        ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_5));
+                        break;
+                    case 7:
+                    case 8:
+                        ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_7));
+                        break;
+                    case 9:
+                    case 10:
+                        ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_10));
+                        break;
+                    default:
+                        ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_0_enabled));
+                        break;
+                }
+                beganSpeech = false;
+            }
         }
 
         @Override
@@ -427,19 +437,59 @@ public class PracticeActivity extends ActionBarActivity {
         @Override
         public void onEndOfSpeech() {
 
+            ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_disabled));
             Log.i(LOG_TAG, "onEndOfSpeech");
             speech.stopListening();
         }
 
         @Override
         public void onError(int error) {
-            progressBar.setIndeterminate(false);
-
-            progressBar.setProgress(0);
-            speech.cancel();
-            ((Button) findViewById(R.id.btn)).setVisibility(View.VISIBLE);
-
             Log.i(LOG_TAG, "onError: " + getErrorText(error));
+            ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_disabled));
+            speech.cancel();
+            ((Button) findViewById(R.id.btn_try_again)).setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        public void onResults(Bundle results) {
+
+            ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_disabled));
+            Log.i(LOG_TAG, "onResults");
+            ArrayList<String> matches = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+
+            Boolean hit = false;
+            for (String r : matches) {
+                hit = current.getCurrentScriptEntry().getTextToCheck().toLowerCase().replaceAll("[^a-zA-Z0-9]", "")
+                        .equals(r.toLowerCase().replaceAll("[^a-zA-Z0-9]", ""));
+                if (hit) {
+                    break;
+                }
+            }
+
+            if (hit) {
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(PracticeActivity.this);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("correct_sentence_count", sharedPreferences.getInt("correct_sentence_count", 0) + 1);
+                editor.commit();
+                if (current.hasMoreScripts()) {
+                    current.selectNextScript();
+                }
+
+            }
+            current.setShouldRunScript(true);
+            runScriptEntry();//user should not stop in the middle of the lesson.
+        }
+
+        @Override
+        public void onPartialResults(Bundle partialResults) {
+
+            Log.i(LOG_TAG, "onPartialResults");
+        }
+
+        @Override
+        public void onEvent(int eventType, Bundle params) {
+
+            Log.i(LOG_TAG, "onEvent");
         }
 
         public String getErrorText(int errorCode) {
@@ -479,46 +529,6 @@ public class PracticeActivity extends ActionBarActivity {
             return message;
         }
 
-        @Override
-        public void onResults(Bundle results) {
-
-            Log.i(LOG_TAG, "onResults");
-            ArrayList<String> matches = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
-
-            Boolean hit = false;
-            for (String r : matches) {
-                hit = current.getCurrentScriptEntry().getTextToCheck().toLowerCase().replaceAll("[^a-zA-Z0-9]", "")
-                        .equals(r.toLowerCase().replaceAll("[^a-zA-Z0-9]", ""));
-                if (hit) {
-                    break;
-                }
-            }
-
-            if (hit) {
-                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(PracticeActivity.this);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putInt("correct_sentence_count", sharedPreferences.getInt("correct_sentence_count", 0) + 1);
-                editor.commit();
-                if (current.hasMoreScripts()) {
-                    current.selectNextScript();
-                }
-
-            }
-            current.setShouldRunScript(true);
-            runScriptEntry();//user should not stop in the middle of the lesson.
-        }
-
-        @Override
-        public void onPartialResults(Bundle partialResults) {
-
-            Log.i(LOG_TAG, "onPartialResults");
-        }
-
-        @Override
-        public void onEvent(int eventType, Bundle params) {
-
-            Log.i(LOG_TAG, "onEvent");
-        }
     }
 
 
