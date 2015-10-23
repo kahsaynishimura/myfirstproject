@@ -1,0 +1,457 @@
+
+insert into exercise (lesson_id,_id,name,transition_image)values(52,35,"Verbs","verbs");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,36,"Vocabulary","vocabulary");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,37,"Expressions","expressions");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,38,"Grammar","grammar");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,39,"Input","Input");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,40,"I am a champion","iamachampion");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,41,"Verbs","verbs");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,42,"Verbs - Practice","practice");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,43,"Vocabulary","vocabulary");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,44,"Vocabulary - Practice","practice");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,45,"Expressions","expressions");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,46,"Expressions - Practice","practice");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,47,"Grammar","grammar");
+insert into exercise (lesson_id,_id,name,transition_image)values(52,48,"Grammar - Practice","practice");
+
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1000,"verbs","","",1,35,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1001,"to wear","to wear","to wear = vestir/usar",2,35,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1002,"wearing","wearing","wearing = vestindo/usando",2,35,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1003,"to save","to save","to save = salvar/economizar",2,35,4);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1004,"saving","saving","saving = salvando/economizando",2,35,5);
+
+			
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1005,"vocabulary","","",1,36,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1006,"clothes","clothes","clothes = roupas",2,36,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1007,"blouse","blouse","blouse = blusa",2,36,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1008,"jeans","jeans","jeans = calça jeans",2,36,4);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1009,"pullover","pullover","pullover = pulôver",2,36,5);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1010,"shorts","shorts","shorts = shorts",2,36,6);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1011,"sneakers","sneakers","sneakers = tênis",2,36,7);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1012,"sock","sock","sock = meia",2,36,8);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1013,"sweater","sweater","sweater = suéter",2,36,9);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1014,"pajamas","pajamas","pajamas = pijama",2,36,10);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1015,"underwear","underwear","underwear = roupa íntima",2,36,11);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1016,"planet","planet","planet = planeta",2,36,12);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1017,"nature","nature","nature = natureza",2,36,13);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1018,"environment","environment","environment = meio ambiente",2,36,14);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1019,"polluted","polluted","polluted = poluído",2,36,15);
+
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1020,"expressions","","",1,37,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1021,"cool","cool","cool = legal",2,37,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1022,"savings","savings","savings = economias",2,37,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1023,"contact list","contact list","contact list = lista de contatos",2,37,4);
+
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1024,"grammar","","",1,38,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1025,"I'm wearing jeans","I'm wearing jeans","I'm wearing jeans = Eu estou usando calça jeans",2,38,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1026,"You're wearing cool sneakers","You're wearing cool sneakers","You're wearing cool sneakers = Você está usando tênis legais",2,38,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1027,"He's wearing new socks","He's wearing new socks","He's wearing new socks = Você está usando meias novas",2,38,4);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1028,"She's wearing shorts and sneakers","She's wearing shorts and sneakers","She's wearing shorts and sneakers = Ela está usando shorts e tênis",2,38,5);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1029,"We're trying to save the planet","We're trying to save the planet","We're trying to save the planet = Nós estamos tentando salvar o planeta",2,38,6);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1030,"You are saving a lot","You are saving a lot","You are saving a lot = Você está economizando muito",2,38,7);
+
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1031,"Input","","",1,39,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1032,"She's wearing red shoes","She's wearing red shoes","She's wearing red shoes = Ela está usando sapatos vermelhoa",2,39,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1033,"He's wearing a green shirt","He's wearing a green shirt","He's wearing a green shirt = Ele está usando uma camisa verde",2,39,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1034,"I'm wearing a jeans and a T-shirt","I'm wearing a jeans and a T-shirt","I'm wearing a jeans and a T-shirt = Eu estou usando um calça jeans e uma camiseta",2,39,4);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1035,"I'm saving my e-mails","I'm saving my e-mails","I'm saving my e-mails = Estou salvando meus e-mails",2,39,5);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1036,"She's saving water","She's saving water","She's saving water = Ela está economizando água",2,39,6);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1037,"He's saving a lot of money","He's saving a lot of money","He's saving a lot of money = Ele está economizando muito dinheiro",2,39,7);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1038,"Are they wearing fancy coats?","Are they wearing fancy coats?","Are they wearing fancy coats? = Eles estão usando casacos chiques?",2,39,8);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1039,"Are they wearing nice clothes?","Are they wearing nice clothes?","Are they wearing nice clothes? = Eles estão vestindo roupas boas?",2,39,9);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1040,"What clothes are they wearing?","What clothes are they wearing?","What clothes are they wearing? = Que roupas eles estão usando?",2,39,10);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1041,"We're not saving the planet","We're not saving the planet","We're not saving the planet = Nós não estamos salvando o planeta",2,39,11);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1042,"They're not saving the animals","They're not saving the animals","They're not saving the animals = Eles não estão salvando os animais",2,39,12);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1043,"She's not saving money","She's not saving money","She's not saving money = Ela não está economizando dinheiro",2,39,13);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1044,"He's not wearing black socks","He's not wearing black socks","He's not wearing black socks = Ele não está usando meias pretas",2,39,14);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1045,"She's not wearing sneakers","She's not wearing sneakers","She's not wearing sneakers = Ela não está usando tênis",2,39,15);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1046,"They're not wearing a sweater","They're not wearing a sweater","They're not wearing a sweater = Eles não estão vestindo um suéter",2,39,16);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1047,"How do we save the nature?","How do we save the nature?","How do we save the nature? = Como nós salvamos a natureza?",2,39,17);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1048,"How do we save the planet?","How do we save the planet?","How do we save the planet? = Como nós salvamos o mundo?",2,39,18);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1049,"How do we save the animals?","How do we save the animals?","How do we save the animals? = Como nós salvamos os animais?",2,39,19);
+			
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1050,"I am a champion","","",1,40,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1051,"I am a champion","","",2,40,2);
+
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1052,"verbs","","",1,41,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1053,"to wear","to wear","to wear = vestir/usar",2,41,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1054,"wearing","wearing","wearing = vestindo/usando",2,41,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1055,"to save","to save","to save = salvar/economizar",2,41,4);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1056,"saving","saving","saving = salvando/economizando",2,41,5);
+
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1057,"Verbs - Practice","","",1,42,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1058,"I wear","I wear","",2,42,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1059,"She","she wears","",2,42,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1060,"They","they wear","",2,42,4);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1061,"I don't wear","I don't wear","",2,42,5);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1062,"We","we don't wear","",2,42,6);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1063,"he","he doesn't wear","",2,42,7);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1064,"do you wear?","do you wear?","",2,42,8);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1065,"they","do they wear?","",2,42,9);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1066,"he","does he wear?","",2,42,10);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1067,"I am wearing","I am wearing","",2,42,11);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1068,"we","we are wearing","",2,42,12);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1069,"they","they are wearing","",2,42,13);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1070,"She's not wearing","She's not wearing","",2,42,14);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1071,"he","he's not wearing","",2,42,15);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1072,"I","I'm not wearing","",2,42,16);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1073,"You are wearing","You are wearing","",2,42,17);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1074,"she","She's wearing","",2,42,18);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1075,"they","they're wearing","",2,42,19);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1076,"he's not wearing","he's not wearing","",2,42,20);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1077,"she","she's not wearing","",2,42,21);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1078,"they","they're not wearing","",2,42,22);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1079,"I save","I save","",2,42,23);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1080,"she","she saves","",2,42,24);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1081,"we","we save","",2,42,25);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1082,"they don't save","they don't save","",2,42,26);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1083,"She","she doesn't save","",2,42,27);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1084,"I","I don't save","",2,42,28);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1085,"do you save?","do you save?","",2,42,29);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1086,"he","does he save?","",2,42,30);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1087,"they","do they save?","",2,42,31);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1088,"I'm saving","I'm saving","",2,42,32);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1089,"she","she's saving","",2,42,33);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1090,"we","we're saving","",2,42,34);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1091,"they're not saving","they're not saving","",2,42,35);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1092,"he","he's not saving","",2,42,36);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1093,"I","I'm not saving","",2,42,37);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1094,"are you saving?","are you saving","",2,42,38);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1095,"they","are they saving?","",2,42,39);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1096,"she","is she saving?","",2,42,40);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1097,"aren't you saving?","aren't you saving?","",2,42,41);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1098,"we","aren't we saving?","",2,42,42);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1099,"she","isn't she saving?","",2,42,43);
+
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1100,"vocabulary","","",1,43,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1101,"clothes","clothes","clothes = roupas",2,43,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1102,"blouse","blouse","blouse = blusa",2,43,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1103,"jeans","jeans","jeans = calsa jeans",2,43,4);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1104,"pullover","pullover","pullover = pulôver",2,43,5);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1105,"shorts","shorts","shorts = shorts",2,43,6);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1106,"sneakers","sneakers","sneakers = tênis",2,43,7);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1107,"sock","sock","sock = meia",2,43,8);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1108,"sweater","sweater","sweater = suéter",2,43,9);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1109,"pajamas","pajamas","pajamas = pijama",2,43,10);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1110,"underwear","underwear","underwear = roupa íntima",2,43,11);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1111,"planet","planet","planet = planeta",2,43,12);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1112,"nature","nature","nature = natureza",2,43,13);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1113,"environment","environment","environment = meio ambiente",2,43,14);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1114,"polluted","polluted","polluted = poluído",2,43,15);
+
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1115,"vocabulary - Practice","","",1,44,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1116,"We are trying to save the environment","We are trying to save the environment","",2,44,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1117,"We are trying to save the nature","We are trying to save the nature","",2,44,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1118,"We are trying to save the planet","We are trying to save the planet","",2,44,4);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1119,"Don't jump in the water. It's polluted","Don't jump in the water. It's polluted","",2,44,5);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1120,"Don't stay in the water. It's polluted","Don't stay in the water. It's polluted","",2,44,6);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1121,"Don't drink the water. It's polluted","Don't drink the water. It's polluted","",2,44,7);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1122,"He's wearing nice clothes","He's wearing nice clothes","",2,44,8);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1123,"He's wearing nice sneakers","He's wearing nice sneakers","",2,44,9);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1124,"He's wearing nice jeans","He's wearing nice jeans","",2,44,10);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1125,"It's too hot, I don't want to wear blouse","It's too hot, I don't want to wear blouse","",2,44,11);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1126,"It's too hot, I don't want to wear pullover","It's too hot, I don't want to wear pullover","",2,44,12);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1127,"It's too hot, I don't want to wear socks","It's too hot, I don't want to use socks","",2,44,13);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1128,"It's cold today, you have to wear a sweater","It's cold today, you have to wear a sweater","",2,44,14);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1129,"It's cold today, they have to wear a sweater.","It's cold today, they have to wear a sweater.","",2,44,15);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1130,"It's cold today, he have to wear a sweater.","It's cold today, he have to wear a sweater.","",2,44,16);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1131,"Your new pajamas is so cute.","Your new pajamas is so cute.","",2,44,17);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1132,"Her new pajamas is so cute.","Her new pajamas is so cute.","",2,44,18);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1133,"My new pajamas is so cute","My new pajamas is so cute","",2,44,19);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1134,"I have to buy new underwear","I have to buy new underwear","",2,44,20);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1135,"I want to buy new underwear","I want to buy new underwear","",2,44,21);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1136,"I need to buy new underwear","I need to buy new underwear","",2,44,22);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1137,"They sell good jeans in this store.","They sell good jeans in this store.","",2,44,23);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1138,"They sell good sneakers in this store.","They sell good sneakers in this store.","",2,44,24);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1139,"They sell good clothes in this store.","They sell good clothes in this store.","",2,44,25);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1140,"She's not wearing her new sweater","She's not wearing her new sweater","",2,44,26);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1141,"She's not wearing her new pullover","She's not wearing her new pullover","",2,44,27);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1142,"She's not wearing her new blouse","She's not wearing her new blouse","",2,44,28);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1143,"What are you doing for the environment","What are you doing for the environment","",2,44,29);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1144,"What are you doing for the nature","What are you doing for the nature","",2,44,30);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1145,"What are you doing for the planet","What are you doing for the planet","",2,44,31);
+
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1146,"expressions","","",1,45,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1147,"cool","cool","cool = legal",2,45,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1148,"savings","savings","savings = economias",2,45,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1149,"contact list","contact list","contact list = lista de contatos",2,45,4);
+
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1150,"Expressions - Practice","","",1,46,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1151,"He needs to save more money to go to the United States of América","He needs to save more money to go to the United States of América","",2,46,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1152,"I need to save more money to go to the United States of América","I need to save more money to go to the United States of América","",2,46,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1153,"We need to save more money to go to the United States of América","We need to save more money to go to the United States of América","",2,46,4);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1154,"This lesson is not so cool.","This lesson is not so cool.","",2,46,5);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1155,"This party is not so cool.","This party is not so cool.","",2,46,6);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1156,"This school is not so cool.","This school is not so cool.","",2,46,7);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1157,"Do you have my e-mail in your contact list?","Do you have my e-mail in your contact list?","",2,46,8);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1158,"Does he have my e-mail in his contact list?","Does he have my e-mail in his contact list?","",2,46,9);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1159,"Does she have my e-mail in her contact list?","Does she have my e-mail in her contact list?","",2,46,10);
+			
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1160,"grammar","","",1,47,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1161,"I'm wearing jeans","I'm wearing jeans","I'm wearing jeans = Eu estou usando calça jeans",2,47,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1162,"You're wearing cool sneakers","You're wearing cool sneakers","You're wearing cool sneakers = Você está usando tênis legais",2,47,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1163,"He's wearing new socks","He's wearing new socks","He's wearing new socks = Você está usando meias novas",2,47,4);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1164,"She's wearing shorts and sneakers","She's wearing shorts and sneakers","She's wearing shorts and sneakers = Ela está usando shorts e tênis",2,47,5);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1165,"We're trying to save the planet","We're trying to save the planet","We're trying to save the planet = Nós estamos tentando salvar o planeta",2,47,6);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1166,"You are saving a lot","You are saving a lot","You are saving a lot = Você está economizando muito",2,47,7);
+
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1167,"Grammar - Practice","","",1,48,1);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1168,"I'm saving a lot of money to study in the United States of América","I'm saving a lot of money to study in the United States of América","",2,48,2);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1169,"He's saving a lot of money to study in the United States of América","He's saving a lot of money to study in the United States of América","",2,48,3);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1170,"She's saving a lot of money to study in the United States of América","She's saving a lot of money to study in the United States of América","",2,48,4);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1171,"She wants to wear new clothes in her birthday","She wants to wear new clothes in her birthday","",2,48,5);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1172,"She wants to wear new clothes in Christimas","She wants to wear new clothes in Christimas","",2,48,6);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1173,"She wants to wear new clothes in Easter","She wants to wear new clothes in Easter","",2,48,7);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1174,"I don't like this pants, I prefer to wear jeans","I don't like this pants, I prefer to wear jeans","",2,48,8);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1175,"She doesn't like this pants, she prefers to wear jeans","She doesn't like this pants, she prefers to wear jeans","",2,48,9);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1176,"He doesn't like this pants, she prefers to wear jeans","He doesn't like this pants, she prefers to wear jeans","",2,48,10);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1177,"I'm wearing a sweater because it is too cold.","I'm wearing a sweater because it is too cold.","",2,48,11);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1178,"I'm wearing a pullover because it is too cold.","I'm wearing a pullover because it is too cold.","",2,48,12);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1179,"I'm wearing a coat because it is too cold.","I'm wearing a coat because it is too cold.","",2,48,13);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1180,"Why aren't you wearing your new sneakers","Why aren't you wearing your new sneakers","",2,48,14);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1181,"Why aren't you wearing your new jeans","Why aren't you wearing your new jeans","",2,48,15);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1182,"Why aren't you wearing your new shorts","Why aren't you wearing your new shorts","",2,48,16);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1183,"He is not using nice sneakers","He is not using nice sneakers","",2,48,17);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1184,"She is not using nice sneakers","She is not using nice sneakers","",2,48,18);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1185,"They aren't using nice sneakers","They aren't using nice sneakers","",2,48,19);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1186,"I'm saving a lot of moneythis year","I'm saving a lot of moneythis year","",2,48,20);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1187,"They are saving a lot of moneythis year","They are saving a lot of moneythis year","",2,48,21);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1188,"We are saving a lot of moneythis year","We are saving a lot of moneythis year","",2,48,22);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1189,"What are you wearing?","What are you wearing?","",2,48,23);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1190,"What is she wearing?","What is she wearing?","",2,48,24);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1191,"What is he wearing?","What is he wearing?","",2,48,25);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1192,"He is wearing a nice green shirt.","He is wearing a nice green shirt.","",2,48,26);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1193,"He is wearing a nice black shirt.","He is wearing a nice black shirt.","",2,48,27);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1194,"He is wearing a nice blue shirt.","He is wearing a nice blue shirt.","",2,48,28);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1195,"What are you saving?","What are you saving?","",2,48,29);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1196,"What are you doing?","What are you doing?","",2,48,30);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1197,"What are you washing?","What are you washing?","",2,48,31);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1198,"She is checking her e-mails in the cyber cafe.","She is checking her e-mails in the cyber cafe.","",2,48,32);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1199,"He is checking his e-mails in the cyber cafe.","He is checking her e-mails in the cyber cafe","",2,48,33);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1200,"They checking their e-mails in the cyber cafe","They checking their e-mails in the cyber cafe","",2,48,34);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1201,"I'm not making fish for dinner tonight","I'm not doing fish for dinner tonight","",2,48,35);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1202,"She's not making fish for dinner tonight","She's not making fish for dinner tonight","",2,48,36);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1203,"We are not making fish for dinner tonight","We are not making fish for dinner tonight","",2,48,37);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1204,"He is helping his parents at home","He is helping his parents at home","",2,48,38);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1205,”They are helping their parents at home","They are helping their parents at home","",2,48,39);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1206,"She is helping her parents at home","She is helping her parents at home","",2,48,40);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1207,"What kind of story are you reading now?","What kind of story are you reading now?","",2,48,41);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1208,"What kind of story are you writing now?","What kind of story are you writing now?","",2,48,42);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1209,"They are having dinner in a nice restaurant tonight","They are having dinner in a nice restaurant tonight","",2,48,43);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1210,"We are having dinner in a nice restaurant tonight","We are having dinner in a nice restaurant tonight","",2,48,44);
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1211,"She are having dinner in a nice restaurant tonight","she are having dinner in a nice restaurant tonight","",2,48,45);
+
+insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			(1212,"","","",2,48,46);
