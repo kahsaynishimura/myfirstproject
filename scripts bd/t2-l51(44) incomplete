@@ -1,0 +1,373 @@
+
+---Licao 44 (karina)
+
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 60, "Speak Right Now", "speakrightnow");
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 61, "Conversation", "conversation");
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 62, "Practice", "practice");
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 63, "Change into Negative", "changeintonegative");
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 64, "Practice", "practice");
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 65, "Change into Affirmative", "changeintoaffirmative");
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 66, "Practice", "practice");
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 67, "Change into Interrogative", "changeintointerrogative");
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 68, "Practice", "practice");
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 69, "Answer the Questions", "speakrightnow");
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 70, "Oral Practice", "oralpractice");
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 71, "Web Talk", "webtalk");
+insert into exercise (lesson_id, _id, name, transition_image) values (51, 72, "I am a Champion", "imachampion");
+
+
+
+--Speak right now
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (250, "Who helps you study?", "Who helps you study?", "A: Who helps you study?", 2, 60, 1);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (251, "My sister does", "My sister does", "B: My sister does", 2, 60, 2);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (252, "My sister helps me study too", "My sister helps me study too", "A: My sister helps me study too", 2, 60, 3);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (253, "brother", "brother", "brother", 2, 60, 4);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (254, "cousin", "cousin", "cousin", 2, 60, 5);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (255, "father", "father", "father", 2, 60, 6);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (256, "mother", "mother, "mother", 2, 60, 7);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (257, "uncle", "uncle", "uncle", 2, 60, 8);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (258, "aunt", "aunt", "aunt", 2, 60, 9);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (259, "teacher", "teacher", "teacher", 2, 60, 10);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (260, "classmate", "classmate", "classmate", 2, 60, 11);
+
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (261, "Make your own sentences with each word according to the model presented in your book.", "", "", 1, 60, 12);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (262, "Who helps you study?", "Who helps you study?", "Who helps you study?", 2, 60, 13);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (263, "brother", "My brother does", "brother(B)", 2, 60, 14);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (264, "", "My brother helps me study too", "brother(A)", 3, 60, 15);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (265, "Who helps you study?", "Who helps you study?", "Who helps you study?", 2, 60, 16);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (266, "cousin", "My cousin does", "cousin(B)", 2, 60, 17);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (267, "", "My cousin helps me study too", "cousin(A)", 3, 60, 18);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (268, "Who helps you study?", "Who helps you study?", "Who helps you study?", 2, 60, 19);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (269, "father", "My father does", "father(B)", 2, 60, 20);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (270, "", "My father helps me study too", "father(A)", 3, 60, 21);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (271, "Who helps you study?", "Who helps you study?", "Who helps you study?", 2, 60, 22);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (272, "mother", "My mother does", "mother(B)", 2, 60, 23);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (273, "", "My mother helps me study too", "mother(A)", 3, 60, 24);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (271, "Who helps you study?", "Who helps you study?", "Who helps you study?", 2, 60, 25);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (272, "uncle", "My uncle does", "uncle(B)", 2, 60, 26);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (273, "", "My uncle helps me study too", "uncle(A)", 3, 60, 27);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (274, "Who helps you study?", "Who helps you study?", "Who helps you study?", 2, 60, 28);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (275, "aunt", "My aunt does", "aunt(B)", 2, 60, 29);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (276, "", "My aunt helps me study too", "aunt(A)", 3, 60, 30);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (277, "Who helps you study?", "Who helps you study?", "Who helps you study?", 2, 60, 31);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (278, "teacher", "My teacher does", "teacher(B)", 2, 60, 32);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (279, "", "My teacher helps me study too", "teacher(A)", 3, 60, 33);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (280, "Who helps you study?", "Who helps you study?", "Who helps you study?", 2, 60, 34);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (281, "classmate", "My classmate does", "classmate(B)", 2, 60, 35);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (282, "", "My classmate helps me study too", "classmate(A)", 3, 60, 36);
+
+--Conversation E*E
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (283, "Conversation", "", "", 1, 61, 1);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (284, "Does your sister help your mom?", "Does your sister help your mom?", "Does your sister help your mom?", 2, 61, 2);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (285, "yes, she does. She helps my mom wash the dishes", "yes, she does. She helps my mom wash the dishes", "Yes, she does. She helps my mom wash the dishes.", 2, 61, 3);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (286, "How do you help your parents at home?", "How do you help your parents at home?", "How do you help your parents at home?", 2, 61, 4);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (287, "I clean the house and wash the silverware", "I clean the house and wash the silverware", "I clean the house and wash the silverware", 2, 61, 5);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (288, "When do you have to help your parents at home?", "When do you have to help your parents at home?", "When do you have to help your parents at home?", 2, 61, 6);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (289, "I have to help my parents after school", "I have to help my parents after school", "I have to help my parents after school", 2, 61, 7);
+
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (290, "Who washes the dishes after dinner?", "Who washes the dishes after dinner?", "Who washes the dishes after dinner?", 2, 61, 8);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (291, "My mother does. She washes the dishes after dinner", "My mother does. She washes the dishes after dinner", "My mother does. She washes the dishes after dinner", 2, 61, 9);
+
+--Conversation E*E (again)
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (292, "once again", "", "", 1, 61, 10);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (293, "Does your sister help your mom?", "Does your sister help your mom?", "Does your sister help your mom?", 2, 61, 11);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (294, "yes, she does. She helps my mom wash the dishes", "yes, she does. She helps my mom wash the dishes", "Yes, she does. She helps my mom wash the dishes.", 2, 61, 12);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (295, "How do you help your parents at home?", "How do you help your parents at home?", "How do you help your parents at home?", 2, 61, 13);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (296, "I clean the house and wash the silverware", "I clean the house and wash the silverware", "I clean the house and wash the silverware", 2, 61, 14);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (297, "When do you have to help your parents at home?", "When do you have to help your parents at home?", "When do you have to help your parents at home?", 2, 61, 15);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (298, "I have to help my parents after school", "I have to help my parents after school", "I have to help my parents after school", 2, 61, 16);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (299, "Who washes the dishes after dinner?", "Who washes the dishes after dinner?", "Who washes the dishes after dinner?", 2, 61, 17);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (300, "My mother does. She washes the dishes after dinner", "My mother does. She washes the dishes after dinner", "My mother does. She washes the dishes after dinner", 2, 61, 18);
+
+--  Practice
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (301, "Let's practice", "", "", 1, 62, 1);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (302, "That's why I love to study English", "That's why I love to study English","", 2, 62, 2);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (303, "we", "That's why we love to study English", "", 2, 62, 3);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (304, "they", "That's why they love to study English","", 2, 62, 4);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (305, "I always wash the dishes after dinner", "I always wash the dishes after dinner","", 2, 62, 5);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (306, "she", "She always washes the dishes after dinner", "", 2, 62, 6);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (307, "we", "We always wash the dishes after dinner","", 2, 62, 7);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (308, "Who is cleaning the house?", "I always wash the dishes after dinner","", 2, 62, 8);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (309, "car", "Who is cleaning the car?", "", 2, 62, 9);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (310, "kitchen", "Who is cleaning the kitchen?","", 2, 62, 10);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (311, "We need more napkins", "We need more napkins","", 2, 62, 11);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (312, "plates", "We need more plates", "", 2, 62, 12);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (313, "forks", "We need more forks","", 2, 62, 13);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (314, "My little sister is learning to eat with a fork", "My little sister is learning to eat with a fork","", 2, 62, 14);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (315, "cousin", "My little cousin is learning to eat with a fork", "", 2, 62, 15);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (316, "brother", "My little brother is learning to eat with a fork","", 2, 62, 16);
+
+   --Change into negative
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (317, "Change the sentences into negative", "", "", 1, 63, 1);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (318, "He is washing the dishes for me", "He isn't washing the dishes for me","isn't", 2, 63, 2);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (319, "I know how to play sports", "I don't know how to play sports","", 2, 63, 3);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (320, "My uncle works with your father", "My uncle doesn't work with your father","", 2, 63, 4);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (321, "We need to print this article for our class", "We don't need to print this article for our class","", 2, 63, 5);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (322, "I understand Spanish very well", "I understand Spanish very well","", 2, 63, 6);
+
+-- Practice some more
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (323, "Let's practice some more!", "", "", 1, 64, 1);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (324, "What are you talking about?", "What are you talking about?","", 2, 64, 2);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (325, "writing", "What are you writing about?", "", 2, 64, 3);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (326, "reading", "What are you reading about?","", 2, 64, 4);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (327, "He goes to the mall every once in a while", "He goes to the mall every once in a while","", 2, 64, 5);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (328, "I", "I go to the mall every once in a while", "", 2, 64, 6);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (329, "she", "She goes to the mall every once in a while","", 2, 64, 7);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (330, "Do they sell ice cream here?", "Do they sell ice cream here?","", 2, 64, 8);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (331, "doughnuts", "Do they sell doughnuts here?", "", 2, 64, 9);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (332, "cookies", "Do they sell cookies here?","", 2, 64, 10);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (333, "Where are your relatives from?", "Where are your relatives from?","", 2, 64, 11);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (334, "parents", "Where are your parents from?", "", 2, 64, 12);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (335, "cousins", "Where are your cousins from?","", 2, 64, 13);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (336, "I'm learning a lot of English with my friends", "I'm learning a lot of English with my friends","", 2, 64, 14);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (337, "sister", "I'm learning a lot of English with my sister", "", 2, 64, 15);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (338, "parents", "I'm learning a lot of English with my parents","", 2, 64, 16);
+
+
+   --Change into affirmative
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (339, "This time you have to change the sentences into affirmative", "", "", 1, 65, 1);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (340, "I don't clean my bedroom on Saturdays", "I clean my bedroom on Saturdays","", 2, 65, 2);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (341, "Don't wash your hands before you eat", "Wash your hands before you eat","", 2, 65, 3);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (342, "We don't run in our physical education class", "We run in our physical education class","", 2, 65, 4);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (343, "She doesn't jump very high", "She jumps very high","", 2, 65, 5);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (344, "The coach isn't helping a lot this year", "The coach is helping a lot this year","", 2, 65, 6);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (345, "I never help my brother clean our bedroom", "I always help my brother clean our bedroom","", 2, 65, 7);
+
+   -- Practice - lets continue
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (346, "Let's continue practicing", "", "", 1, 66, 1);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (347, "Your office is so dirty today", "Your office is so dirty today","", 2, 66, 2);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (348, "bedroom", "Your bedroom is so dirty today", "", 2, 66, 3);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (349, "bathroom", "Your bathroom is so dirty today","", 2, 66, 4);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (350, "You have to wash all the dishes after dinner", "You have to wash all the dishes after dinner","", 2, 66, 5);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (351, "We", "We have to wash all the dishes after dinner", "", 2, 66, 6);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (352, "I", "I have to wash all the dishes after dinner","", 2, 66, 7);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (353, "I need a bowl for my cereal", "I need a bowl for my cereal","", 2, 66, 8);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (354, "We", "We need a bowl for my cereal", "", 2, 66, 9);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (355, "You", "You need a bowl for my cereal","", 2, 66, 10);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (356, "She is learning English very fast", "She is learning English very fast","", 2, 66, 11);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (357, "We", "We are learning English very fast", "", 2, 66, 12);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (358, "I", "I am learning English very fast","", 2, 66, 13);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (359, "I always talk to my parents on the internet", "I always talk to my parents on the internet","", 2, 66, 14);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (360, "sister", "I always talk to my sister on the internet", "", 2, 66, 15);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (361, "relatives", "I always talk to my relatives on the internet","", 2, 66, 16);
+
+   --Change into interrogative
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (362, "Now, change the sentences into interrogative", "", "", 1, 67, 1);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (363, "She isn't washing all the chothes", "Isn't she washing all the chothes?","", 2, 67, 2);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (364, "He is at the mall", "Is he at the mall?","", 2, 67, 3);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (365, "You are cleaning the house", "Are you cleaning the house?","", 2, 67, 4);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (366, "This is the right schedule", "Is this the right schedule?","", 2, 67, 5);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (367, "You aren't in fifth grade", "Aren't you in fifth grade?","", 2, 67, 6);
+
+--Practice
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (368, "Let's practice again", "", "", 1, 68, 1);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (369, "I want a mug for my milk", "I want a mug for my milk","", 2, 68, 2);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (370, "he", "He wants a mug for my milk", "", 2, 68, 3);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (371, "she", "She wants a mug for my milk","", 2, 68, 4);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (372, "Why do we need to buy more silverware?", "Why do we need to buy more silverware?","", 2, 68, 5);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (373, "straws", "Why do we need to buy more straws?", "", 2, 68, 6);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (374, "napkins", "Why do we need to buy more napkins?","", 2, 68, 7);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (375, "Let's have lunch at the cafeteria", "Let's have lunch at the cafeteria","", 2, 68, 8);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (376, "downtown", "Let's have lunch downtown", "", 2, 68, 9);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (377, "at the mall", "Let's have lunch at the mall","", 2, 68, 10);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (378, "I don't know where my teacher is from", "Ilearningdsnds","", 2, 68, 11);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (379, "she", "I don't know where she is from", "", 2, 68, 12);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (380, "he", "I don't know where he is from","", 2, 68, 13);
+
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (381, "He is my favorite singer", "He is my favorite singer","", 2, 68, 14);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (382, "soccer player", "He is my favorite soccer player", "", 2, 68, 15);
+insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   (383, "teacher", "He is my favorite teacher","", 2, 68, 16);
+
+
+--Web talk
+
+
+--I am a champion
+
