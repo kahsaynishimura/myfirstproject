@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2015-10-25 19:35:11.405
+-- Last modification date: 2015-11-01 23:28:49.475
 
 
 
@@ -30,6 +30,7 @@ CREATE TABLE lesson (
     _id integer  NOT NULL   PRIMARY KEY,
     name varchar(20)  NOT NULL,
     book_id integer  NOT NULL,
+    avg_completion_time_mili integer  NOT NULL,
     FOREIGN KEY (book_id) REFERENCES book (_id)
 );
 
@@ -53,6 +54,8 @@ CREATE TABLE user_script (
     finish_time datetime  NOT NULL,
     users_id integer  NOT NULL,
     script_id integer  NOT NULL,
+    percentage_wrong integer  NOT NULL,
+    total_hits integer  NOT NULL,
     FOREIGN KEY (users_id) REFERENCES users (_id),
     FOREIGN KEY (script_id) REFERENCES script_entry (_id)
 );
