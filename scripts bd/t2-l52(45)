@@ -439,7 +439,7 @@ insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
 			(1204,"He is helping his parents at home","He is helping his parents at home","",2,48,38);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(1205,”They are helping their parents at home","They are helping their parents at home","",2,48,39);
+			(1205,"They are helping their parents at home","They are helping their parents at home","",2,48,39);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
 			(1206,"She is helping her parents at home","She is helping her parents at home","",2,48,40);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values

@@ -34,17 +34,17 @@ public class TransitionActivity extends ActionBarActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(TransitionActivity.this);
 
         Exercise exercise = loadExercise(sharedPreferences.getInt("lesson_id", 1), sharedPreferences.getInt("exercise_count", 0));
-        try {
-            int imageResource = getResources().getIdentifier("drawable/" + exercise.getTransitionImage(), null, getPackageName());
-            container.setBackground(getResources().getDrawable(imageResource));
-        } catch (Resources.NotFoundException e) {
-            Toast.makeText(this, "Erro", Toast.LENGTH_SHORT).show();
+        if(exercise!=null) {
+            try {
+                int imageResource = getResources().getIdentifier("drawable/" + exercise.getTransitionImage(), null, getPackageName());
+                container.setBackground(getResources().getDrawable(imageResource));
+            } catch (Resources.NotFoundException e) {
+                Toast.makeText(this, "Erro", Toast.LENGTH_SHORT).show();
+            }
         }
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
                 Intent i = new Intent(TransitionActivity.this, PracticeActivity.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -68,7 +68,13 @@ public class TransitionActivity extends ActionBarActivity {
             exercises = db.findExercises(lessonId);
 
         }
-        return exercises.get(exerciseCount);
+        if (exercises.size() > exerciseCount) {//is there other exercise
+            //yes
+            return exercises.get(exerciseCount);
+        } else {
+            //no
+            return null;
+        }
     }
 }
 

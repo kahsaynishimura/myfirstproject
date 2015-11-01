@@ -44,15 +44,15 @@ insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
 			(10012,"teacher","teacher","teacher = professor(a)",2,21,10);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10013,"Portuguese","portuguese","portuguese = português",2,21,11);
+			(10013,"Portuguese","Portuguese","Portuguese = português",2,21,11);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10014,"English","english","english = inglês",2,21,12);
+			(10014,"English","english","English = inglês",2,21,12);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10015,"Franch","franch","franch",2,21,13);
+			(10015,"French","french","French = francês",2,21,13);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10016,"Spanish","spanish","spanish = espanhol",2,21,14);
+			(10016,"Spanish","spanish","Spanish = espanhol",2,21,14);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10017,"cup","cup","cup = xÌcara",2,21,15);
+			(10017,"cup","cup","cup = xícara",2,21,15);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
 			(10018,"glass","glass","glass = copo",2,21,16);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
@@ -74,45 +74,45 @@ insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
 			(10027,"at","at","at = em",2,21,25);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10028,"Expressions","","",1,22,26);
+			(10028,"Expressions","","",1,22,1);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10029,"good morning","good morning","good morning = bom dia",2,22,1);
+			(10029,"good morning","good morning","good morning = bom dia",2,22,2);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10030,"good afternoon","good afternoon","good afternoon = boa tarde",2,22,2);
+			(10030,"good afternoon","good afternoon","good afternoon = boa tarde",2,22,3);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10031,"good evening","good evening","good evening = boa noite",2,22,3);
+			(10031,"good evening","good evening","good evening = boa noite",2,22,4);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10032,"good night","good night","good night = boa noite",2,22,4);
+			(10032,"good night","good night","good night = boa noite",2,22,5);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10033,"at home","at home","at home = em casa",2,22,5);
+			(10033,"at home","at home","at home = em casa",2,22,6);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10034,"best friend","best friend","best friend = melhor amigo",2,22,6);
+			(10034,"best friend","best friend","best friend = melhor amigo",2,22,7);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
 			(10035,"Grammar","","",1,23,1);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10036,"I drink","I drink","I drink = eu bebo",2,23,8);
+			(10036,"I drink","I drink","I drink = eu bebo",2,23,2);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10037,"I don't drink","I don't drink","I don't drink = eu não bebo",2,23,9);
+			(10037,"I don't drink","I don't drink","I don't drink = eu não bebo",2,23,3);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10038,"I speak","I speak","I speak = eu falo",2,23,10);
+			(10038,"I speak","I speak","I speak = eu falo",2,23,4);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10039,"I don't speak","I don't speak","I don't speak = eu não falo",2,23,11);
+			(10039,"I don't speak","I don't speak","I don't speak = eu não falo",2,23,5);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10040,"I eat","I eat","I eat = eu como",2,23,12);
+			(10040,"I eat","I eat","I eat = eu como",2,23,6);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10041,"I don't eat","I don't eat","I don't eat = eu não como",2,23,13);
+			(10041,"I don't eat","I don't eat","I don't eat = eu não como",2,23,7);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10042,"I study","I study","I study = eu estudo",2,23,214);
+			(10042,"I study","I study","I study = eu estudo",2,23,8);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10043,"I don't study","I don't study","I don't study = eu não estudo",2,23,15);
+			(10043,"I don't study","I don't study","I don't study = eu não estudo",2,23,9);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10044,"in the morning","in the morning","in the morning = de manhã",2,23,16);
+			(10044,"in the morning","in the morning","in the morning = de manhã",2,23,10);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10045,"in the afternoon","in the afternoon","in the afternoon = de tarde",2,23,17);
+			(10045,"in the afternoon","in the afternoon","in the afternoon = de tarde",2,23,11);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10046,"in the evening","in the evening","in the evening = à noite",2,23,18);
+			(10046,"in the evening","in the evening","in the evening = à noite",2,23,12);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10047,"at night","at night","at night = à noite",2,23,19);
+			(10047,"at night","at night","at night = à noite",2,23,13);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
 			(10048,"Input","","",1,24,1);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
@@ -120,7 +120,7 @@ insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
 			(10050,"I speak English","I speak English","I speak English = Eu falo inglês",2,24,3);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10051,"You speak Portuguêse","You speak Portuguêse","You speak Portuguêse = Você fala português",2,24,4);
+			(10051,"You speak Portuguese","You speak Portuguese","You speak Portuguese = Você fala português",2,24,4);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
 			(10052,"I speak Spanish","I speak Spanish","I speak Spanish = Eu falo espanhol",2,24,5);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
@@ -313,7 +313,7 @@ insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
 			(10146,"Expressions","","",1,30,1);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
-			(10147,"good morning","good morning","good morning = bom dia",2,20,2);
+			(10147,"good morning","good morning","good morning = bom dia",2,30,2);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
 			(10148,"good afternoon","good afternoon","good afternoon = boa tarde",2,30,3);
 insert into script_entry(_id,text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values

@@ -25,7 +25,7 @@
     <string name="title_activity_lesson_completed">Congrats!</string>
     <string name="go_to_next_lesson">Go to next lesson</string>
     <string name="you_completed">You spoke</string>
-    <string name="correct_sentences_in_this_lesson">corrected sentences in this lesson.</string>
+    <string name="correct_sentences_in_this_lesson">correct sentences in this lesson.</string>
     <string name="exit">Exit</string>
     <string name="you_graduated_from">You graduated from</string>
     <string name="try_again">Try again</string>

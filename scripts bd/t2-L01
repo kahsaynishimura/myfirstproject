@@ -5,7 +5,7 @@ insert into exercise (lesson_id, _id, name, transition_image) values (1, 2, "Voc
 insert into exercise (lesson_id, _id, name, transition_image) values (1, 3 , "Expressions", "expressions");
 insert into exercise (lesson_id, _id, name, transition_image) values (1, 4 , "Grammar", "grammar");
 insert into exercise (lesson_id, _id, name, transition_image) values (1, 5 , "Input", "input");
-insert into exercise (lesson_id, _id, name, transition_image) values (1, 6 , "I am a champion", "imachampion");
+insert into exercise (lesson_id, _id, name, transition_image) values (1, 6 , "I am a champion", "iamachampion");
 insert into exercise (lesson_id, _id, name, transition_image) values (1, 7, "Verbs", "verbs");
 insert into exercise (lesson_id, _id, name, transition_image) values (1, 8, "Verbs-Practice", "practice");
 insert into exercise (lesson_id, _id, name, transition_image) values (1, 9, "Vocabulary", "vocabulary");
@@ -447,7 +447,7 @@ insert into script_entry(_id, text_to_read, text_to_check, text_to_show, functio
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
    (180, "I drink tea", "I drink tea", "", 2, 14, 26);
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
-   (181, "milk", "I drink temilka", "", 2, 14, 27);
+   (181, "milk", "I drink milk", "", 2, 14, 27);
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
    (182, "juice", "I drink juice", "", 2, 14, 28);
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values

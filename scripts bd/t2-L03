@@ -127,7 +127,7 @@ insert into script_entry(_id, text_to_read, text_to_check, text_to_show, functio
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
    (545, "a new book", "a new book", "a new book = um livro novo", 2, 84, 10);
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
-   (546, "a big store", "a big store", "a big store = uma loa grande”, 2, 84, 11);
+   (546, "a big store", "a big store", "a big store = uma loa grande", 2, 84, 11);
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
    (547, "an English teacher", "an English teacher", "an English teacher = um(a) professor(a) de inglês", 2, 84, 12);
 
@@ -242,7 +242,7 @@ insert into script_entry(_id, text_to_read, text_to_check, text_to_show, functio
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
    (590, "I don't play video games", "I don't play video games", "", 2, 87, 11);
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
-   (591, "you", “You don't play video games", "", 2, 87, 12);
+   (591, "you", "You don't play video games", "", 2, 87, 12);
 
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
    (592, "I study Spanish", "I study Spanish", "", 2, 87, 13);
@@ -376,7 +376,7 @@ insert into script_entry(_id, text_to_read, text_to_check, text_to_show, functio
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
    (647, "late", "Do you sleep late?", "", 2, 89, 27);
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
-   (648, "in the classroom”, "Do you sleep in the classroom?”, "", 2, 89, 28);
+   (648, "in the classroom", "Do you sleep in the classroom?", "", 2, 89, 28);
 
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
    (649, "Yes, I like soda", "Yes, I like soda", "", 2, 89, 29);

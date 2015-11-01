@@ -21,7 +21,6 @@ import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,7 +28,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -73,30 +71,34 @@ public class PracticeActivity extends ActionBarActivity {
         Integer lessonId = sharedPreferences.getInt("lesson_id", 0);
         updateTitleWithLessonName(lessonId);
         loadExercises(lessonId);
-        current.setCurrentExercise(exercises.get(sharedPreferences.getInt("exercise_count", 0)));
+        if (exercises.size() <= sharedPreferences.getInt("exercise_count", 0)) {
+            finish();
+        } else {
+            Exercise e = exercises.get(sharedPreferences.getInt("exercise_count", 0));
+            current.setCurrentExercise(e);
+            setContentView(R.layout.activity_practice);
 
-        setContentView(R.layout.activity_practice);
-
-        speech = SpeechRecognizer.createSpeechRecognizer(PracticeActivity.this);
-        speech.setRecognitionListener(new CustomSpeechRecognition());
-        recognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, "en_US");
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName());
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 3);
+            speech = SpeechRecognizer.createSpeechRecognizer(PracticeActivity.this);
+            speech.setRecognitionListener(new CustomSpeechRecognition());
+            recognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+            recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, "en_US");
+            recognizerIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName());
+            recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
+            recognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 3);
 
 
-        if (hasMoreExercises()) {
-            selectNextExercise();
-            TTS = new TextToSpeech(PracticeActivity.this, new TextToSpeech.OnInitListener() {
-                @Override
-                public void onInit(int status) {
+            if (hasMoreExercises()) {
+                selectNextExercise();
+                TTS = new TextToSpeech(PracticeActivity.this, new TextToSpeech.OnInitListener() {
+                    @Override
+                    public void onInit(int status) {
 
-                    startExercise();
-                }
-            });
+                        startExercise();
+                    }
+                });
+            }
+            checkConnection();
         }
-        checkConnection();
     }
 
     public void startExercise() {
@@ -343,7 +345,9 @@ public class PracticeActivity extends ActionBarActivity {
 
                     current.setShouldRunScript(true);
                 } else {
+
                     Intent i = new Intent(PracticeActivity.this, LessonCompletedActivity.class);
+
                     startActivity(i);
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
@@ -372,7 +376,9 @@ public class PracticeActivity extends ActionBarActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        TTS.shutdown();
+        if (TTS != null) {
+            TTS.shutdown();
+        }
     }
 
 

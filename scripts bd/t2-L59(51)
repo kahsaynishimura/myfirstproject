@@ -1,0 +1,532 @@
+-- Lesson 51 karina
+
+insert into exercise (lesson_id, name, transition_image) values (59, "Verbs", "verbs");
+insert into exercise (lesson_id, name, transition_image) values (59, "Vocabulary", "vocabulary");
+insert into exercise (lesson_id, name, transition_image) values (59, "Expressions", "expressions");
+insert into exercise (lesson_id, name, transition_image) values (59, "Grammar", "grammar");
+insert into exercise (lesson_id, name, transition_image) values (59, "Input", "input");
+insert into exercise (lesson_id, name, transition_image) values (59, "I am a champion", "iamachampion");
+insert into exercise (lesson_id, name, transition_image) values (59, "Verbs", "verbs");
+insert into exercise (lesson_id, name, transition_image) values (59, "Verbs-Practice", "practice");
+insert into exercise (lesson_id, name, transition_image) values (59, "Vocabulary", "vocabulary");
+insert into exercise (lesson_id, name, transition_image) values (59, "Vocabulary-Practice", "practice");
+insert into exercise (lesson_id, name, transition_image) values (59, "Expressions", "expressions");
+insert into exercise (lesson_id, name, transition_image) values (59, "Expressions-Practice", "practice");
+insert into exercise (lesson_id, name, transition_image) values (59, "Grammar", "grammar");
+insert into exercise (lesson_id, name, transition_image) values (59, "Grammar-Practice", "practice");
+insert into exercise (lesson_id, name, transition_image) values (59, "Input", "input");
+
+--Verbs - E*E
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "verbs", "", "", 1, 95, 1);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "to love", "to love", "to love = amar/adorar", 2, 95, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "loving", "loving", "loving = amando/adorando", 2, 95, 3);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "to enjoy", "to enjoy", "to enjoy = gostar/curtir", 2, 95, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "enjoying", "enjoying", "enjoying = gostando/curtindo", 2, 95, 5);
+
+--Vocabulary - E*E
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("vocabulary", "", "", 1, 96, 1);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("swimming suit", "swimming suit", "swimming suit = traje de banho", 2, 96, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("slacks", "slacks", "slacks = calças", 2, 96, 3);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("uniform", "uniform", "uniform = uniforme", 2, 96, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("sandal", "sandal", "sandal = sandália", 2, 96, 5);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("hat", "hat", "hat = chapéu", 2, 96, 6);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("dining room", "dining room", "dining room = sala de jantar", 2, 96, 7);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("living room", "living room", "living room = sala de estar", 2, 96, 8);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("championship", "championship", "championship = campeonato", 2, 96, 9);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("pinball", "pinball", "pinball = fliperama", 2, 96, 10);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("snowboard", "snowboard", "snowboard = snowboard", 2, 96, 11);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("wild", "wild", "wild = selvagem", 2, 96, 12);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("whale", "whale", "whale = baleia", 2, 96, 13);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("turtle", "turtle", "turtle = tartaruga", 2, 96, 14);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("whole", "whole", "whole = inteiro/todo", 2, 96, 15);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("different", "different", "different = diferente", 2, 96, 16);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("again", "again", "again = outra vez", 2, 96, 17);
+
+-—Expressions - E*E
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("expressions", "", "", 1, 97, 1);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("in front of", "in front of", "in front of = na frente de", 2, 97, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("behind", "behind", "behind = atrás", 2, 97, 3);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("across from", "across from", "across from = do outdo lado de", 2, 97, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("MP3 player", "MP3 player", "MP3 player = aparelho de mp3", 2, 97, 5);
+
+—-Grammar - E*E
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("grammar", "", "", 1, 98, 1);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I love skating", "I love skating", "I love skating = Eu adoro patinar", 2, 98, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("We don’t like bowling", "We don’t like bowling", "We don’t like bowling = Nós não gostamos de jogar boliche", 2, 98, 3);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Does he enjoy swimming?", "Does he enjoy swimming?", "Does he enjoy swimming? = Ele gosta de natação?", 2, 98, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Do you eat before going to school?", "Do you eat before going to school?", "Do you eat before going to school? = Você come antes de ir para escola?", 2, 98, 5);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Do you like to sleep after studying?", "Do you like to sleep after studying?", "Do you like to sleep after studying? = Você gosta de dormir depois de estudar?", 2, 98, 6);
+
+
+--Input - E*E
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Input", "", "", 1, 99, 1);
+	--green
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("She loves skating in the rink", "She loves skating in the rink", "She loves skating in the rink = Ela adora patinar no rinque", 2, 99, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("He loves wearing hats", "He loves wearing hats", "He loves wearing hats = Ele adora usar chapéus", 2, 99, 3);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("We are loving this school", "We are loving this school", "We are loving this school = Nós estamos adorando esta escola", 2, 99, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("They love planning pinball", "They love planning pinball", "They love planning pinball = Eles adoram jogar fliperama", 2, 99, 5);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("He enjoys skateboarding", "He enjoys skateboarding", "He enjoys skateboarding = Ele gosta de andar de skate", 2, 99, 6);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("We enjoy picnics", "We enjoy picnics", "We enjoy picnics = Nós gostamos de piqueniques", 2, 99, 7);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("She enjoys watching cartoons", "She enjoys watching cartoons", "She enjoys watching cartoons = Ela gosta de assistir desenhos animados", 2, 99, 8);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I enjoy playing video games", "I enjoy playing video games", "I enjoy playing video games = Eu gosto de jogar video games", 2, 99, 9);
+
+	—-red
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("He isn’t in the championship", "He isn’t in the championship", "He isn’t in the championship = Ele não está no campeonato", 2, 99, 10);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I don’t like skateboarding here", "I don’t like skateboarding here", "I don’t like skateboarding here = Eu não gosto de andar de skate aqui", 2, 99, 11);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("They don’t like dancing at that disco club", "They don’t like dancing at that disco club", "They don’t like dancing at that disco club = Eles não gostam de dançar naquela discoteca", 2, 99, 12);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("He’s not reading in front of the TV", "He’s not reading in front of the TV", "He’s not reading in front of the TV = Ele não está lendo em frente à televisão", 2, 99, 13);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("We’re not enjoying this movie", "We’re not enjoying this movie", "We’re not enjoying this movie = Nós não estamos curtindo esse filme", 2, 99, 14);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("He is not enjoying his work", "He is not enjoying his work", "He is not enjoying his work = Ele não está gostando de seu trabalho", 2, 99, 15);
+
+	—-blue
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Do you wear a uniform at school?", "Do you wear a uniform at school?", "Do you wear a uniform at school? = Você usa uniforme na escola?", 2, 99, 16);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("What do you love to do?", "What do you love to do?", "What do you love to do? = O que você adora fazer?", 2, 99, 17);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Who do you love?", "Who do you love?", "Who do you love? = Quem você ama?", 2, 99, 18);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Do you enjoy going to bed early?", "Do you enjoy going to bed early?", "Do you enjoy going to bed early? = Você gosta de ir para a cama cedo?", 2, 99, 19);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Are you enjoying the whales?", "Are you enjoying the whales?", "Are you enjoying the whales? = Você está gostando das baleias?", 2, 99, 20);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Is this your MP3 player?", "Is this your MP3 player?", "Is this your MP3 player? = É este o seu aparelho de mp3?", 2, 99, 21);
+
+--I am a champion
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I am a champion", "", "", 1, 100, 1);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I say no to drugs", "I say no to drugs", "I say no to drugs = Eu digo não às drogas", 2, 100, 2);
+
+--Verbs - E*E
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "verbs", "", "", 1, 101, 1);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "to love", "to love", "to love = amar/adorar", 2, 101, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "loving", "loving", "loving = amando/adorando", 2, 101, 3);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "to enjoy", "to enjoy", "to enjoy = gostar/curtir", 2, 101, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "enjoying", "enjoying", "enjoying = gostando/curtindo", 2, 101, 5);
+
+—-Verbs - Practice 
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I love", "I love", "", 2, 102, 1);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "she loves", "", 2, 102, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("they", "they love", "", 2, 102, 3);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I don’t love", "I don’t love", "", 2, 102, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("we", "We don’t love", "", 2, 102, 5);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("he", "He doesn’t love", "", 2, 102, 6);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Do you love?", "Do you love?", "", 2, 102, 7);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "Does she love?", "", 2, 102, 8);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("they", "Do they love?", "", 2, 102, 9);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I am loving", "I am loving", "", 2, 102, 10);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("we", "We are loving", "", 2, 102, 11);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("they", "They are loving", "", 2, 102, 12);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I am not loving", "I am not loving", "", 2, 102, 13);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("they", "They are not loving", "", 2, 9, 14);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "She is not loving", "", 2, 102, 15);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Are you loving?", "Are you loving?", "", 2, 102, 16);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("he", "Is he loving?", "", 2, 102, 17);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("they", "Are they loving?", "", 2, 102, 18);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I enjoy", "I enjoy", "", 2, 102, 19);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "she enjoys", "", 2, 102, 20);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("we", "We enjoy", "", 2, 102, 21);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("He doesn’t enjoy", "He doesn’t enjoy", "", 2, 102, 22);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("they", "they don’t enjoy", "", 2, 102, 23);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I", "I don’t enjoy", "", 2, 102, 24);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Do you enjoy?", "Do you enjoy?", "", 2, 102, 25);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "Does she enjoy?", "", 2, 102, 26);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("he", "Does he enjoy?", "", 2, 102, 27);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I am enjoying", "I am enjoying", "", 2, 102, 28);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("they", "They are enjoying", "", 2, 102, 29);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "She is enjoying", "", 2, 102, 30);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I am not enjoying", "I am not enjoying", "", 2, 102, 31);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("he", "He is not enjoying", "", 2, 102, 32);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("we", "We are not enjoying", "", 2, 102, 33);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Is she enjoying?", "Is she enjoying?", "", 2, 102, 34);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("they", "Are they enjoying?", "", 2, 102, 35);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("he", "Is he enjoying?", "", 2, 102, 36);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Aren’t they enjoying?", "Aren’t they enjoying?", "", 2, 102, 37);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "Isn’t she enjoying?", "", 2, 102, 38);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("you", "Aren’t you enjoying?", "", 2, 102, 39);
+
+--Vocabulary - E*E
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("vocabulary", "", "", 1, 103, 1);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("swimming suit", "swimming suit", "swimming suit = traje de banho", 2, 103, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("slacks", "slacks", "slacks = calças", 2, 103, 3);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("uniform", "uniform", "uniform = uniforme", 2, 103, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("sandal", "sandal", "sandal = sandália", 2, 103, 5);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("hat", "hat", "hat = chapéu", 2, 103, 6);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("dining room", "dining room", "dining room = sala de jantar", 2, 103, 7);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("living room", "living room", "living room = sala de estar", 2, 103, 8);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("championship", "championship", "championship = campeonato", 2, 103, 9);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("pinball", "pinball", "pinball = fliperama", 2, 103, 10);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("snowboard", "snowboard", "snowboard = snowboard", 2, 103, 11);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("wild", "wild", "wild = selvagem", 2, 103, 12);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("whale", "whale", "whale = baleia", 2, 103, 13);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("turtle", "turtle", "turtle = tartaruga", 2, 103, 14);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("whole", "whole", "whole = inteiro/todo", 2, 103, 15);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("different", "different", "different = diferente", 2, 103, 16);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("again", "again", "again = outra vez", 2, 103, 17);
+
+--Vocabulary - Practice
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Is he in the skateboard championship?", "Is he in the skateboard championship?", "", 2, 104, 1);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("swimming", "Is he in the swimming championship?", "", 2, 104, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("skating", "Is he in the skating championship?", "", 2, 104, 3);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("She looks great in her new dress", "She looks great in her new dress", "", 2, 104, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("sandals", "She looks great in her new sandals", "", 2, 104, 5);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("slacks", "She looks great in her new slacks", "", 2, 104, 6);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Don’t you have to wear a uniform to go to that school?", "Don’t you have to wear a uniform to go to that school?", "", 2, 104, 7);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "Doesn’t she have to wear a uniform to go to that school?", "", 2, 104, 8);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("we", "Don’t we have to wear a uniform to go to that school?", "", 2, 104, 9);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("My siblings love playing pinball", "My siblings love playing pinball", "", 2, 104, 10);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("soccer", "My siblings love playing soccer", "", 2, 104, 11);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("football", "My siblings love playing football", "", 2, 104, 12);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I want a new snowboard for Christmas", "I want a new snowboard for Christmas", "", 2, 104, 13);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("he", "He wants a new snowboard for Christmas", "", 2, 104, 14);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "She wants a new snowboard for Christmas", "", 2, 104, 15);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("My mother is wearing a beautiful hat", "My mother is wearing a beautiful hat", "", 2, 104, 16);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("aunt", "My aunt is wearing a beautiful hat", "", 2, 104, 17);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("grandmother", "My grandmother is wearing a beautiful hat", "", 2, 104, 18);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Why are they watching that movie again?", "Why are they watching that movie again?", "", 2, 104, 19);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("you", "Why are you watching that movie again?", "", 2, 104, 20);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "Why is she watching that movie again?", "", 2, 104, 21);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Next time we want to go to a different place", "Next time we want to go to a different place", "", 2, 104, 22);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I", "Next time I want to go to a different place", "", 2, 104, 23);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("they", "Next time they want to go to a different place", "", 2, 104, 24);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("The dining room is very dirty, you have to clean it", "The dining room is very dirty, you have to clean it", "", 2, 104, 25);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("living room", "The living room is very dirty, you have to clean it", "", 2, 104, 26);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Look at those whales", "Look at those whales", "", 2, 104, 27);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("turtles", "Look at those turtles", "", 2, 104, 28);
+
+--Expressions
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("expressions", "", "", 1, 105, 1);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("in front of", "in front of", "in front of = na frente de", 2, 105, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("behind", "behind", "behind = atrás", 2, 105, 3);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("across from", "across from", "across from = do outdo lado de", 2, 105, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("MP3 player", "MP3 player", "MP3 player = aparelho de mp3", 2, 105, 5);
+
+--Expressions - Practice
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Our school is in front of that new gym", "Our school is in front of that new gym", "", 2, 106, 1);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("behind", "Our school is behind that new gym", "", 2, 106, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("across from", "Our school is across from that new gym", "", 2, 106, 3);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Are you enjoying your MP3?", "Are you enjoying your MP3?", "", 2, 106, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("he", "Is he enjoying your MP3?", "", 2, 106, 5);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "Is she enjoying your MP3?", "", 2, 106, 6);
+
+--Grammar
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("grammar", "", "", 1, 107, 1);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I love skating", "I love skating", "I love skating = Eu adoro patinar", 2, 107, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("We don’t like bowling", "We don’t like bowling", "We don’t like bowling = Nós não gostamos de jogar boliche", 2, 107, 3);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Does he enjoy swimming?", "Does he enjoy swimming?", "Does he enjoy swimming? = Ele gosta de natação?", 2, 107, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Do you eat before going to school?", "Do you eat before going to school?", "Do you eat before going to school? = Você come antes de ir para escola?", 2, 107, 5);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Do you like to sleep after studying?", "Do you like to sleep after studying?", "Do you like to sleep after studying? = Você gosta de dormir depois de estudar?", 2, 107, 6);
+
+--Grammar - Practice
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I enjoy skating here", "I enjoy skating here", "", 2, 108, 1);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "she enjoys skating here", "", 2, 108, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("they", "they enjoy skating here", "", 2, 108, 3);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Do you like to swim in the lake?", "Do you like to swim in the lake?", "", 2, 108, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("river", "Do you like to swim in the river?", "", 2, 108, 5);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("sea", "Do you like to swim in the sea?", "", 2, 108, 6);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("We love watching movies together", "We love watching movies together", "", 2, 108, 7);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("they", "They love watching movies together", "", 2, 108, 8);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("We don’t like cleaning the house every day", "We don’t like cleaning the house every day", "", 2, 108, 9);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("kitchen", "We don’t like cleaning the kitchen every day", "", 2, 108, 10);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("our bedroom", "We don’t like cleaning our bedroom every day", "", 2, 108, 11);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("All the children love to jump on the trampoline", "All the children love to jump on the trampoline", "", 2, 108, 12);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("girls", "girls love to jump on the trampoline", "", 2, 108, 13);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("boys", "boys love to jump on the trampoline", "", 2, 108, 14);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Does he enjoy studying here?", "Does he enjoy studying here?", "", 2, 108, 15);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("living", "Does he enjoy living here?", "", 2, 108, 16);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("working", "Does he enjoy working here?", "", 2, 108, 17);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("What do you do after coming from school?", "What do you do after coming from school?", "", 2, 108, 18);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("he", "What does he do after coming from school?", "", 2, 108, 19);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("she", "What does she do after coming from school?", "", 2, 108, 20);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I like to study a little before going to my English class", "I like to study a little before going to my English class", "", 2, 108, 21);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Spanish", "I like to study a little before going to my Spanish class", "", 2, 108, 22);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Chinese", "I like to study a little before going to my Chinese class", "", 108, 108, 23);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I always read a book before going to bed", "I always read a book before going to bed", "", 2, 108, 24);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("He", "He always reads a book before going to bed", "", 2, 108, 25);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("She", "She always reads a book before going to bed", "", 2, 108, 26);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("What do you do after having lunch?", "What do you do after having lunch?", "", 2, 108, 27);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("dinner", "What do you do after having dinner?", "", 2, 108, 28);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("breakfast", "What do you do after having breakfast?", "", 2, 108, 29);
+
+--Input - E*E
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Input", "", "", 1, 109, 1);
+	--green
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("She loves skating in the rink", "She loves skating in the rink", "She loves skating in the rink = Ela adora patinar no rinque", 2, 109, 2);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("He loves wearing hats", "He loves wearing hats", "He loves wearing hats = Ele adora usar chapéus", 2, 109, 3);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("We are loving this school", "We are loving this school", "We are loving this school = Nós estamos adorando esta escola", 2, 109, 4);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("They love planning pinball", "They love planning pinball", "They love planning pinball = Eles adoram jogar fliperama", 2, 109, 5);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("He enjoys skateboarding", "He enjoys skateboarding", "He enjoys skateboarding = Ele gosta de andar de skate", 2, 109, 6);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("We enjoy picnics", "We enjoy picnics", "We enjoy picnics = Nós gostamos de piqueniques", 2, 109, 7);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("She enjoys watching cartoons", "She enjoys watching cartoons", "She enjoys watching cartoons = Ela gosta de assistir desenhos animados", 2, 109, 8);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I enjoy playing video games", "I enjoy playing video games", "I enjoy playing video games = Eu gosto de jogar video games", 2, 109, 9);
+
+	--red
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("He isn’t in the championship", "He isn’t in the championship", "He isn’t in the championship = Ele não está no campeonato", 2, 109, 10);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("I don’t like skateboarding here", "I don’t like skateboarding here", "I don’t like skateboarding here = Eu não gosto de andar de skate aqui", 2, 109, 11);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("They don’t like dancing at that disco club", "They don’t like dancing at that disco club", "They don’t like dancing at that disco club = Eles não gostam de dançar naquela discoteca", 2, 109, 12);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("He’s not reading in front of the TV", "He’s not reading in front of the TV", "He’s not reading in front of the TV = Ele não está lendo em frente à televisão", 2, 109, 13);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("We’re not enjoying this movie", "We’re not enjoying this movie", "We’re not enjoying this movie = Nós não estamos curtindo esse filme", 2, 109, 14);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("He is not enjoying his work", "He is not enjoying his work", "He is not enjoying his work = Ele não está gostando de seu trabalho", 2, 109, 15);
+
+	--blue
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Do you wear a uniform at school?", "Do you wear a uniform at school?", "Do you wear a uniform at school? = Você usa uniforme na escola?", 2, 109, 16);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("What do you love to do?", "What do you love to do?", "What do you love to do? = O que você adora fazer?", 2, 109, 17);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Who do you love?", "Who do you love?", "Who do you love? = Quem você ama?", 2, 109, 18);
+
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Do you enjoy going to bed early?", "Do you enjoy going to bed early?", "Do you enjoy going to bed early? = Você gosta de ir para a cama cedo?", 2, 109, 19);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Are you enjoying the whales?", "Are you enjoying the whales?", "Are you enjoying the whales? = Você está gostando das baleias?", 2, 109, 20);
+insert into script_entry(text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("Is this your MP3 player?", "Is this your MP3 player?", "Is this your MP3 player? = É este o seu aparelho de mp3?", 2, 109, 21);

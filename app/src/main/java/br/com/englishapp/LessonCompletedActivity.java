@@ -29,20 +29,7 @@ public class LessonCompletedActivity extends ActionBarActivity {
 
         txt.setText(getString(R.string.you_completed) + " " + correctSentenceCount + " " + getString(R.string.correct_sentences_in_this_lesson));
 
-        ArrayList<Lesson> lessons = getLessons(sharedPreferences.getInt("book_id", 1));
-        Lesson lastLesson = lessons.get(lessons.size() - 1);
-        Integer lessonId = sharedPreferences.getInt("lesson_id", 0);
-        if (lessonId == lastLesson.get_id()) {//se foi a ultima lição, mostra o certificado
-            txt.setText(getString(R.string.you_graduated_from) + " " + getBookName(sharedPreferences.getInt("book_id", 1)));
-            Button btn = (Button) findViewById(R.id.congrats_image);
-            btn.setText(getString(R.string.exit));
-            btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
-        }
+
     }
 
     public void nextLesson(View v) {
@@ -51,6 +38,7 @@ public class LessonCompletedActivity extends ActionBarActivity {
         ArrayList<Lesson> lessons = getLessons(sharedPreferences.getInt("book_id", 1));
         Lesson lastLesson = lessons.get(lessons.size() - 1);
         Integer lessonId = sharedPreferences.getInt("lesson_id", 0);
+
         if (lessonId != lastLesson.get_id()) {//if that was not the last lesson, start the next one
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("exercise_count", 0);
@@ -60,6 +48,16 @@ public class LessonCompletedActivity extends ActionBarActivity {
 
             Intent i = new Intent(LessonCompletedActivity.this, TransitionActivity.class);
             startActivity(i);
+        }else{
+            txt.setText(getString(R.string.you_graduated_from) + " " + getBookName(sharedPreferences.getInt("book_id", 1)));
+            Button btn = (Button) findViewById(R.id.congrats_image);
+            btn.setText(getString(R.string.exit));
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
         }
 
         finish();

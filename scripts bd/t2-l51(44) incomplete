@@ -33,7 +33,7 @@ insert into script_entry(_id, text_to_read, text_to_check, text_to_show, functio
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
    (255, "father", "father", "father", 2, 60, 6);
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
-   (256, "mother", "mother, "mother", 2, 60, 7);
+   (256, "mother", "mother", "mother", 2, 60, 7);
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
    (257, "uncle", "uncle", "uncle", 2, 60, 8);
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
@@ -352,7 +352,7 @@ insert into script_entry(_id, text_to_read, text_to_check, text_to_show, functio
    (377, "at the mall", "Let's have lunch at the mall","", 2, 68, 10);
 
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
-   (378, "I don't know where my teacher is from", "Ilearningdsnds","", 2, 68, 11);
+   (378, "I don't know where my teacher is from", "I don't know where my teacher is from","", 2, 68, 11);
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
    (379, "she", "I don't know where she is from", "", 2, 68, 12);
 insert into script_entry(_id, text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
