@@ -28,8 +28,6 @@ public class LessonCompletedActivity extends ActionBarActivity {
         Integer correctSentenceCount = sharedPreferences.getInt("correct_sentence_count", 0);
 
         txt.setText(getString(R.string.you_completed) + " " + correctSentenceCount + " " + getString(R.string.correct_sentences_in_this_lesson));
-
-
     }
 
     public void nextLesson(View v) {
