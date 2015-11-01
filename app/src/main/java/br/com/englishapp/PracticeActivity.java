@@ -34,7 +34,9 @@ import android.widget.VideoView;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 
 import br.com.englishapp.model.CurrentPracticeData;
 import br.com.englishapp.model.DBHandler;
@@ -165,6 +167,8 @@ public class PracticeActivity extends ActionBarActivity {
 
     private void runScriptEntry() {
         if (current.getShouldRunScript()) {
+
+
             ((Button) findViewById(R.id.btn_try_again)).setVisibility(View.GONE);
             current.setShouldRunScript(false);//prove to me again that I can execute everything ->go to the next exercise.
 
@@ -338,15 +342,22 @@ public class PracticeActivity extends ActionBarActivity {
 
 
                 if (exercises.size() > sharedPreferences.getInt("exercise_count", 0)) {
-
                     Intent i = new Intent(PracticeActivity.this, TransitionActivity.class);
                     startActivity(i);
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
                     current.setShouldRunScript(true);
                 } else {
-
                     Intent i = new Intent(PracticeActivity.this, LessonCompletedActivity.class);
+
+                    //getting the current time in milliseconds, and creating a Date object from it:
+                    Date date = new Date(System.currentTimeMillis()); //or simply new Date();
+
+                    //converting it back to a milliseconds representation:
+                    long millis = date.getTime();
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putLong("finish_time", date.getTime());
+                    editor.commit();
 
                     startActivity(i);
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -481,6 +492,11 @@ public class PracticeActivity extends ActionBarActivity {
                     current.selectNextScript();
                 }
 
+            }else{
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(PracticeActivity.this);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("wrong_sentence_count", sharedPreferences.getInt("wrong_sentence_count", 0) + 1);
+                editor.commit();
             }
             current.setShouldRunScript(true);
             runScriptEntry();//user should not stop in the middle of the lesson.
