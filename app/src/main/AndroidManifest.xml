@@ -42,6 +42,10 @@
             android:name=".LessonCompletedActivity"
             android:label="@string/title_activity_lesson_completed" >
         </activity>
+        <activity
+            android:name=".BookCompletedActivity"
+            android:label="@string/title_activity_lesson_completed" >
+        </activity>
     </application>
 
 </manifest>

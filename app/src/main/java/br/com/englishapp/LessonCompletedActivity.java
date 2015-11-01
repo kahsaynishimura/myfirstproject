@@ -49,17 +49,9 @@ public class LessonCompletedActivity extends ActionBarActivity {
             Intent i = new Intent(LessonCompletedActivity.this, TransitionActivity.class);
             startActivity(i);
         }else{
-            txt.setText(getString(R.string.you_graduated_from) + " " + getBookName(sharedPreferences.getInt("book_id", 1)));
-            Button btn = (Button) findViewById(R.id.congrats_image);
-            btn.setText(getString(R.string.exit));
-            btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
+            Intent i = new Intent(LessonCompletedActivity.this,BookCompletedActivity.class);
+            startActivity(i);
         }
-
         finish();
     }
 
@@ -81,9 +73,7 @@ public class LessonCompletedActivity extends ActionBarActivity {
     }
 
     public String getBookName(Integer bookId) {
-
         String[] books = getResources().getStringArray(R.array.books);
-
         return books[bookId - 1];
     }
 }
