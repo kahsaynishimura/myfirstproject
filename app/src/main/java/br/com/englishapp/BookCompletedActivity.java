@@ -16,7 +16,7 @@ public class BookCompletedActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_completed);
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(BookCompletedActivity.this);
-        txt = (TextView) findViewById(R.id.txt_message);
+        txt = (TextView) findViewById(R.id.txt_correct);
         txt.setText(getString(R.string.you_graduated_from) + " " + getBookName(sharedPreferences.getInt("book_id", 1)));
         Button btn = (Button) findViewById(R.id.exit_btn);
         btn.setText(getString(R.string.exit));
