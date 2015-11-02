@@ -14,3 +14,6 @@ INSERT INTO `function` VALUES (5,'only shows video');
 
 INSERT INTO `exercise` VALUES (1,'Verbs','verbs',1);
 INSERT INTO `book` VALUES (1,'Teens 2');
+
+INSERT INTO `user`(name) VALUES ('Karina');
+INSERT INTO `user`(name) VALUES ('Thiago');

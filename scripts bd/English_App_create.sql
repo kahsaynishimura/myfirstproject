@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2015-11-01 23:28:49.475
+-- Last modification date: 2015-11-01 23:56:34.559
 
 
 
@@ -47,6 +47,15 @@ CREATE TABLE script_entry (
     FOREIGN KEY (function_id) REFERENCES function (_id)
 );
 
+-- Table: user
+CREATE TABLE user (
+    _id integer  NOT NULL   PRIMARY KEY,
+    name varchar(20)  NOT NULL,
+    code integer  NOT NULL  AUTOINCREMENT,
+    CONSTRAINT user_ak_1 UNIQUE (_id),
+    CONSTRAINT user_ak_2 UNIQUE (code)
+);
+
 -- Table: user_script
 CREATE TABLE user_script (
     _id integer  NOT NULL   PRIMARY KEY,
@@ -56,14 +65,8 @@ CREATE TABLE user_script (
     script_id integer  NOT NULL,
     percentage_wrong integer  NOT NULL,
     total_hits integer  NOT NULL,
-    FOREIGN KEY (users_id) REFERENCES users (_id),
+    FOREIGN KEY (users_id) REFERENCES user (_id),
     FOREIGN KEY (script_id) REFERENCES script_entry (_id)
-);
-
--- Table: users
-CREATE TABLE users (
-    _id integer  NOT NULL   PRIMARY KEY,
-    name varchar(20)  NOT NULL
 );
 
 
