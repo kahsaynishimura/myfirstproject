@@ -19,7 +19,6 @@ import br.com.englishapp.model.DBHandler;
 import br.com.englishapp.model.Lesson;
 
 public class LessonCompletedActivity extends ActionBarActivity {
-    TextView txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +26,13 @@ public class LessonCompletedActivity extends ActionBarActivity {
         setContentView(R.layout.activity_lesson_completed);
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(LessonCompletedActivity.this);
 
+        saveLastLessonCompletedId(sharedPreferences);
 
         long millis = sharedPreferences.getLong("start_time", 0L);
         Date startTime = new Date(millis);
-
-
         Integer correctSentenceCount = sharedPreferences.getInt("correct_sentence_count", 0);
         Integer wrongSentenceCount = sharedPreferences.getInt("wrong_sentence_count", 0);
         Integer percentageWrong = (wrongSentenceCount * 100) / correctSentenceCount;
-
 
         //no matter what happens, if the student gets here, he is rewarded.
         Integer userPoints = 2;
@@ -60,6 +57,22 @@ public class LessonCompletedActivity extends ActionBarActivity {
         ((TextView) findViewById(R.id.txt_finish_time)).setText(getString(R.string.finish_time) + ": " + df.format(new Date()));
         ((TextView) findViewById(R.id.txt_correct)).setText(getString(R.string.correct) + ": " + correctSentenceCount);
         ((TextView) findViewById(R.id.txt_wrong_percentage)).setText(getString(R.string.errors_percentage) + ": " + percentageWrong + "%");
+    }
+
+    public void saveLastLessonCompletedId(SharedPreferences sharedPreferences) {
+
+        DBHandler db = null;
+
+        try {
+            InputStream is = getBaseContext().getAssets()
+                    .open(DBHandler.DATABASE_NAME);
+            db = new DBHandler(this, is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (db != null) {
+             db.saveLastLessonCompletedId(sharedPreferences.getInt("user_id", 0), sharedPreferences.getInt("lesson_id", 0));
+        }
     }
 
     public void nextLesson(View v) {
@@ -103,8 +116,5 @@ public class LessonCompletedActivity extends ActionBarActivity {
         return null;
     }
 
-    public String getBookName(Integer bookId) {
-        String[] books = getResources().getStringArray(R.array.books);
-        return books[bookId - 1];
-    }
+
 }
