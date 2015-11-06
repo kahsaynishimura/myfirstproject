@@ -5,6 +5,7 @@ package br.com.englishapp.model;
  */
 
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -29,12 +30,15 @@ public class DBHandler {
     private static final String TABLE_LESSON = "lesson";
     private static final String TABLE_EXERCISE = "exercise";
     private static final String TABLE_SCRIPT_ENTRY = "script_entry";
+    private static final String TABLE_USER = "user";
 
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_LESSON_ID = "lesson_id";
     private static final String COLUMN_FUNCTION_ID = "function_id";
     private static final String COLUMN_EXERCISE_ID = "exercise_id";
     private static final String COLUMN_NAME = "name";
+    private static final String COLUMN_CODE = "code";
+    private static final String COLUMN_LAST_COMPLETED_LESSON_ID = "last_completed_lesson_id";
     private static final String COLUMN_BOOK_ID = "book_id";
     private static final String COLUMN_TEXT_TO_SHOW = "text_to_show";
     private static final String COLUMN_TRANSITION_IMAGE = "transition_image";
@@ -148,6 +152,18 @@ public class DBHandler {
     }
 
 
+    public Boolean saveLastLessonCompletedId(Integer userId, Integer lessonCompletedId) {
+        ContentValues insertValues = new ContentValues();
+        insertValues.put(COLUMN_LAST_COMPLETED_LESSON_ID, lessonCompletedId.toString());
+        open();
+        Integer numberRows = db.update(
+                TABLE_USER, insertValues, COLUMN_ID + " = "+userId,null);
+
+        db.close();
+        return numberRows > 0;
+
+    }
+
     public ArrayList<ScriptEntry> findScripts(Integer exerciseId) {
         ArrayList<ScriptEntry> scriptEntries = new ArrayList<>();
         open();
@@ -166,6 +182,24 @@ public class DBHandler {
         close();
 
         return scriptEntries;
+    }
+
+    public User findUser(String userCode) {
+        User user = null;
+        open();
+        Cursor c = db.query(TABLE_USER,
+                new String[]{COLUMN_ID, COLUMN_NAME,
+                        COLUMN_LAST_COMPLETED_LESSON_ID, COLUMN_CODE},
+                COLUMN_CODE + " LIKE ? ", new String[]{userCode.toString()},
+                null, null, null, null);
+        if (c.moveToFirst()) {
+            do {
+                user = new User(c.getInt(0), c.getString(1), userCode, c.getInt(2));
+            } while (c.moveToNext());
+        }
+        close();
+
+        return user;
     }
 
     public ArrayList<Lesson> findLessons(Integer bookId) {

@@ -41,29 +41,31 @@ public class LessonActivity extends ActionBarActivity {
         myLessons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(LessonActivity.this, TransitionActivity.class);
-                Lesson l = (Lesson) a.getItem(position);
-
-                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(LessonActivity.this);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-
-
-                //getting the current time in milliseconds, and creating a Date object from it:
-                Date date = new Date(System.currentTimeMillis()); //or simply new Date();
-
-                //converting it back to a milliseconds representation:
-                long millis = date.getTime();
-
-                editor.putInt("exercise_count", 0);
-                editor.putInt("correct_sentence_count", 0);
-                editor.putInt("wrong_sentence_count", 0);
-                editor.putLong("start_time", date.getTime());
-                editor.putInt("lesson_id", l.get_id());
-                editor.commit();
-                startActivity(i);
-                finish();
+                openLesson(a, position);
             }
         });
+    }
+
+    public void openLesson(ArrayAdapter<Lesson> a, Integer position) {
+        Intent i = new Intent(LessonActivity.this, TransitionActivity.class);
+        Lesson l = (Lesson) a.getItem(position);
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(LessonActivity.this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        Date date = new Date();
+
+        //converting it back to a milliseconds representation:
+        long millis = date.getTime();
+
+        editor.putInt("exercise_count", 0);
+        editor.putInt("correct_sentence_count", 0);
+        editor.putInt("wrong_sentence_count", 0);
+        editor.putLong("start_time", date.getTime());
+        editor.putInt("lesson_id", l.get_id());
+        editor.commit();
+        startActivity(i);
+        finish();
     }
 
     private ArrayList<Lesson> getLessons(Integer bookId) {

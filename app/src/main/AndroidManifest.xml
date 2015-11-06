@@ -20,10 +20,10 @@
         <activity
             android:name=".LessonActivity"
             android:label="@string/title_activity_lesson"
-            android:parentActivityName=".BookActivity" >
+            android:parentActivityName=".LessonCompletedActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.englishapp.BookActivity" />
+                android:value="br.com.englishapp.LessonCompletedActivity" />
         </activity>
         <activity
             android:name=".PracticeActivity"
