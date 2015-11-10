@@ -39,7 +39,7 @@ public class SelectUserActivity extends ActionBarActivity {
 
             user = db.findUser(code);
             if (user != null) {
-                Intent i = new Intent(SelectUserActivity.this, PracticeActivity.class);
+                Intent i = new Intent(SelectUserActivity.this, LessonActivity.class);
 
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(SelectUserActivity.this);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -54,8 +54,6 @@ public class SelectUserActivity extends ActionBarActivity {
                 editor.putInt("correct_sentence_count", 0);
                 editor.putInt("wrong_sentence_count", 0);
                 editor.putInt("user_id", user.get_id());
-                editor.putLong("start_time", date.getTime());
-                editor.putInt("lesson_id", user.getLastCompletedLessonId()+1);
                 editor.commit();
                 startActivity(i);
                 finish();

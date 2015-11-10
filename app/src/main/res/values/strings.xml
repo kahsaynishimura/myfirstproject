@@ -19,7 +19,6 @@
         <item>@string/w2</item>
     </string-array>
     <string name="title_activity_lesson">Choose your lesson</string>
-    <string name="title_activity_book">Choose your book</string>
     <string name="title_activity_practice">Practice</string>
     <string name="title_activity_transition">One more exercise</string>
     <string name="title_activity_lesson_completed">Congrats!</string>

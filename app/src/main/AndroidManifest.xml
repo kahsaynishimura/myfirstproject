@@ -14,16 +14,12 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".BookActivity"
-            android:label="@string/title_activity_book" >
+            android:label="@string/app_name" >
 
         </activity>
         <activity
             android:name=".LessonActivity"
-            android:label="@string/title_activity_lesson"
-            android:parentActivityName=".LessonCompletedActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.englishapp.LessonCompletedActivity" />
+            android:label="@string/title_activity_lesson">
         </activity>
         <activity
             android:name=".PracticeActivity"
