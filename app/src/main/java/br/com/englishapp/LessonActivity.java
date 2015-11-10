@@ -1,21 +1,17 @@
 package br.com.englishapp;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Date;
 
 import br.com.englishapp.adapters.LessonAdapter;
 import br.com.englishapp.model.DBHandler;
@@ -38,34 +34,7 @@ public class LessonActivity extends ActionBarActivity {
         final ArrayAdapter<Lesson> a = new LessonAdapter(LessonActivity.this, R.layout.lesson_list_item, lessons);
         ListView myLessons = (ListView) findViewById(R.id.lessons);
         myLessons.setAdapter(a);
-        myLessons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                openLesson(a, position);
-            }
-        });
-    }
 
-    public void openLesson(ArrayAdapter<Lesson> a, Integer position) {
-        Intent i = new Intent(LessonActivity.this, TransitionActivity.class);
-        Lesson l = (Lesson) a.getItem(position);
-
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(LessonActivity.this);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        Date date = new Date();
-
-        //converting it back to a milliseconds representation:
-        long millis = date.getTime();
-
-        editor.putInt("exercise_count", 0);
-        editor.putInt("correct_sentence_count", 0);
-        editor.putInt("wrong_sentence_count", 0);
-        editor.putLong("start_time", date.getTime());
-        editor.putInt("lesson_id", l.get_id());
-        editor.commit();
-        startActivity(i);
-        finish();
     }
 
     private ArrayList<Lesson> getLessons(Integer bookId) {

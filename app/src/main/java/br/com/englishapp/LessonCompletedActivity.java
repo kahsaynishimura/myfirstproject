@@ -59,7 +59,7 @@ public class LessonCompletedActivity extends ActionBarActivity {
         ((TextView) findViewById(R.id.txt_wrong_percentage)).setText(getString(R.string.errors_percentage) + ": " + percentageWrong + "%");
     }
 
-    public void saveLastLessonCompletedId(SharedPreferences sharedPreferences) {
+    public void saveLastLessonCompletedId(SharedPreferences sharedPreferences) {//TODO: save dates as well
 
         DBHandler db = null;
 

@@ -54,6 +54,7 @@ public class SelectUserActivity extends ActionBarActivity {
                 editor.putInt("correct_sentence_count", 0);
                 editor.putInt("wrong_sentence_count", 0);
                 editor.putInt("user_id", user.get_id());
+                editor.putInt("last_lesson_completed_id", user.getLastCompletedLessonId());
                 editor.commit();
                 startActivity(i);
                 finish();
