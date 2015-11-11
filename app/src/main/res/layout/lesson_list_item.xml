@@ -32,8 +32,6 @@
                 android:text="Lesson 3"
                 android:textAllCaps="true"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
-
-
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

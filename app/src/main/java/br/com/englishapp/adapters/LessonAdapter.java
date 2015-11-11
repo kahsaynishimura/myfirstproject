@@ -50,7 +50,8 @@ public class LessonAdapter extends ArrayAdapter<Lesson> {
         if (obj.get_id() <= lastCompletedLesson+1) {
         //the next lesson must be unlocked as well.
             ((ImageView) view.findViewById(R.id.imgPadLock)).setImageDrawable(context.getDrawable(R.drawable.padlock_unlock));
-            if (obj.get_id() <= lastCompletedLesson) {//completed lessons display a check mark
+            if (obj.get_id() <= lastCompletedLesson) {
+            //completed lessons display a check mark
                 ((ImageView) view.findViewById(R.id.imgPadLock)).setImageDrawable(context.getDrawable(R.drawable.checkmark          ));
             }
             view.setOnClickListener(new View.OnClickListener() {
