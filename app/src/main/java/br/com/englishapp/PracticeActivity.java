@@ -25,6 +25,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -34,7 +35,6 @@ import android.widget.VideoView;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 
@@ -399,7 +399,7 @@ public class PracticeActivity extends ActionBarActivity {
         @Override
         public void onReadyForSpeech(Bundle params) {
 
-            ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_0_enabled));
+            ((ImageButton) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_0_enabled));
 
             Log.i(LOG_TAG, "onReadyForSpeech");
         }
@@ -419,26 +419,26 @@ public class PracticeActivity extends ActionBarActivity {
                 switch ((int) rmsdB) {
                     case 1:
                     case 2:
-                        ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_1));
+                        ((ImageButton) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_1));
                         break;
                     case 3:
                     case 4:
-                        ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_3));
+                        ((ImageButton) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_3));
                         break;
                     case 5:
                     case 6:
-                        ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_5));
+                        ((ImageButton) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_5));
                         break;
                     case 7:
                     case 8:
-                        ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_7));
+                        ((ImageButton) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_7));
                         break;
                     case 9:
                     case 10:
-                        ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_10));
+                        ((ImageButton) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_10));
                         break;
                     default:
-                        ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_0_enabled));
+                        ((ImageButton) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_0_enabled));
                         break;
                 }
                 beganSpeech = false;
@@ -454,7 +454,7 @@ public class PracticeActivity extends ActionBarActivity {
         @Override
         public void onEndOfSpeech() {
 
-            ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_disabled));
+            ((ImageButton) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_disabled));
             Log.i(LOG_TAG, "onEndOfSpeech");
             speech.stopListening();
         }
@@ -462,23 +462,39 @@ public class PracticeActivity extends ActionBarActivity {
         @Override
         public void onError(int error) {
             Log.i(LOG_TAG, "onError: " + getErrorText(error));
-            ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_disabled));
+            ((ImageButton) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_disabled));
             speech.cancel();
             ((Button) findViewById(R.id.btn_try_again)).setVisibility(View.VISIBLE);
+        }
+
+        public void updateLastSentences(String sentence) {
+            TextView tv1 = ((TextView) findViewById(R.id.recognizedText1));
+            TextView tv2 = ((TextView) findViewById(R.id.recognizedText2));
+            TextView tv3 = ((TextView) findViewById(R.id.recognizedText3));
+            TextView tv4 = ((TextView) findViewById(R.id.recognizedText4));
+            TextView tv5 = ((TextView) findViewById(R.id.recognizedText5));
+            tv1.setText(tv2.getText());
+            tv2.setText(tv3.getText());
+            tv3.setText(tv4.getText());
+            tv4.setText(tv5.getText());
+            tv5.setText(sentence);
         }
 
         @Override
         public void onResults(Bundle results) {
 
-            ((ImageView) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_disabled));
+            ((ImageButton) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_disabled));
             Log.i(LOG_TAG, "onResults");
             ArrayList<String> matches = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
 
+            //just show the first result so that the user gets a sense of where he is wrong
+            String recognizedSentence = (matches.size() > 0) ? matches.get(0) : "";
             Boolean hit = false;
             for (String r : matches) {
                 hit = current.getCurrentScriptEntry().getTextToCheck().toLowerCase().replaceAll("[^a-zA-Z0-9]", "")
                         .equals(r.toLowerCase().replaceAll("[^a-zA-Z0-9]", ""));
                 if (hit) {
+                    recognizedSentence = r;
                     break;
                 }
             }
@@ -492,12 +508,14 @@ public class PracticeActivity extends ActionBarActivity {
                     current.selectNextScript();
                 }
 
-            }else{
+            } else {
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(PracticeActivity.this);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt("wrong_sentence_count", sharedPreferences.getInt("wrong_sentence_count", 0) + 1);
+
                 editor.commit();
             }
+            updateLastSentences(recognizedSentence);
             current.setShouldRunScript(true);
             runScriptEntry();//user should not stop in the middle of the lesson.
         }
