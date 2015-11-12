@@ -24,9 +24,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -109,7 +107,6 @@ public class PracticeActivity extends ActionBarActivity {
 
     /*Whenever tryAgain is called, the function runscriptentry is allowed because the variable shouldRunScript was changed to true*/
     public void tryAgain(View v) {
-        ((Button) findViewById(R.id.btn_try_again)).setVisibility(View.GONE);
         current.setShouldRunScript(true);
         runScriptEntry();
     }
@@ -168,8 +165,6 @@ public class PracticeActivity extends ActionBarActivity {
     private void runScriptEntry() {
         if (current.getShouldRunScript()) {
 
-
-            ((Button) findViewById(R.id.btn_try_again)).setVisibility(View.GONE);
             current.setShouldRunScript(false);//prove to me again that I can execute everything ->go to the next exercise.
 
             if (current.getCurrentScriptIndex() < current.getCurrentExercise().getScriptEntries().size()) {
@@ -464,7 +459,6 @@ public class PracticeActivity extends ActionBarActivity {
             Log.i(LOG_TAG, "onError: " + getErrorText(error));
             ((ImageButton) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_disabled));
             speech.cancel();
-            ((Button) findViewById(R.id.btn_try_again)).setVisibility(View.VISIBLE);
         }
 
         public void updateLastSentences(String sentence) {
