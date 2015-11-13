@@ -1,0 +1,382 @@
+
+---Licao 12 (karina)
+
+insert into exercise (lesson_id,  name, transition_image) values (13, "Speak Right Now", "speakrightnow");
+insert into exercise (lesson_id,  name, transition_image) values (13, "Conversation", "conversation");
+insert into exercise (lesson_id,  name, transition_image) values (13, "Practice", "practice");
+insert into exercise (lesson_id,  name, transition_image) values (13, "Change into Negative", "changeintonegative");
+insert into exercise (lesson_id,  name, transition_image) values (13, "Practice", "practice");
+insert into exercise (lesson_id,  name, transition_image) values (13, "Change into Affirmative", "changeintoaffirmative");
+insert into exercise (lesson_id,  name, transition_image) values (13, "Practice", "practice");
+insert into exercise (lesson_id,  name, transition_image) values (13, "Change into Interrogative", "changeintointerrogative");
+insert into exercise (lesson_id,  name, transition_image) values (13, "Practice", "practice");
+insert into exercise (lesson_id,  name, transition_image) values (13, "Answer the Questions", "speakrightnow");
+insert into exercise (lesson_id,  name, transition_image) values (13, "Oral Practice", "oralpractice");
+insert into exercise (lesson_id,  name, transition_image) values (13, "Web Talk", "webtalk");
+insert into exercise (lesson_id,  name, transition_image) values (13, "I am a Champion", "imachampion");
+
+--Speak right now
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Do you want some juice?", "Do you want some juice?", "A:Do you want some juice?", 2, 125, 1);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Yes, please. I want some juice", "Yes, please. I want some juice", "B: Yes, please. I want some juice", 2, 125, 2);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("water", "water", "water", 2, 125, 3);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("soda", "soda", "soda", 2, 125, 4);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("coffee", "coffee", "coffee", 2, 125, 5);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("tea", "tea", "tea", 2, 125, 6);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("milk", "milk", "milk", 2, 125, 7);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ("pop", "pop", "pop", 2, 125, 8);
+
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Make your own sentences with each word according to the model presented in your book.", "", "", 1, 125, 9);
+
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "water", "Do you want some water?", "A: water", 2, 125, 10);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "", "Yes, please. I want some water", "B: water", 2, 125, 11);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "soda", "Do you want some soda?", "A: soda", 2, 60, 12);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "", "Yes, please. I want some soda", "B: soda", 2, 125, 13);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "coffee", "Do you want some coffee?", "A: coffee", 2, 125, 14);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "", "Yes, please. I want some coffee", "B: coffee", 2, 125, 15);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "tea", "Do you want some tea?", "A: tea", 2, 125, 16);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "", "Yes, please. I want some tea", "B: tea", 2, 125, 17);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "milk", "Do you want some milk?", "A: milk", 2, 125, 18);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "", "Yes, please. I want some milk", "B: milk", 2, 125, 19);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "pop", "Do you want some pop?", "A: pop", 2, 125, 20);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "", "Yes, please. I want some pop", "B: pop", 2, 125, 21);
+
+--Conversation E*E
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Conversation", "", "", 1, 126, 1);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Do you want jam or butter on your bread?", "Do you want jam or butter on your bread?", "Do you want jam or butter on your bread?", 2, 126, 2);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I want some jam, please", "I want some jam, please", "I want some jam, please", 2, 126, 3);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Do you want to go to the mall or downtown?", "Do you want to go to the mall or downtown?", "Do you want to go to the mall or downtown?", 2, 126, 4);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I prefer to go to the mall", "I prefer to go to the mall", "I prefer to go to the mall", 2, 126, 5);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Do you study with your brother or your sister?", "Do you study with your brother or your sister?", "Do you study with your brother or your sister?", 2, 126, 6);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I usually study with my sister", "I usually study with my sister", "I usually study with my sister", 2, 126, 7);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "When do you usually go to the park?", "When do you usually go to the park?", "When do you usually go to the park?", 2, 126, 8);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I usually go to the park on weekends", "I usually go to the park on weekends", "I usually go to the park on weekends", 2, 126, 9);
+
+--  Practice
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Let's practice", "", "", 1, 127, 1);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I don’t have time to talk with my friend today", "I don’t have time to talk to my friend today","", 2, 127, 2);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "play", "I don’t have time to play with my friend today","", 2, 127, 3);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "study", "I don’t have time to study with my friend today","", 2, 127, 4);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I don’t like to drink tea for breakfast", "I don’t like to drink tea for breakfast","", 2, 127, 5);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "milk", "I don’t like to drink milk for breakfast","", 2, 127, 6);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "juice", "I don’t like to drink juice for breakfast","", 2, 127, 7);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I don’t want to sleep now", "I don’t want to sleep now","", 2, 127, 8);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "eat", "I don’t want to eat now","", 2, 127, 9);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "study", "I don’t want to study now","", 2, 127, 10);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I want to play soccer this weekend", "I want to play soccer this weekend","", 2, 127, 11);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "today", "I want to play soccer today","", 2, 127, 12);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "tomorrow", "I want to play soccer tomorrow","", 2, 127, 13);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "You don’t want to eat turkey today", "You don’t want to eat turkey today","", 2, 127, 14);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "chicken", "You don’t want to eat chicken today","", 2, 127, 15);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "ham", "You don’t want to eat ham today","", 2, 127, 16);
+
+   --Change into negative
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Change the sentences into negative", "", "", 1, 128, 1);
+
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I want to go to the park this weekend", "I don’t want to go to the park this weekend","", 2, 128, 2);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I need to speak with the teacher today", "I don’t need to speak with the teacher today","", 2, 128, 3);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I play soccer everyday", "I don’t play soccer everyday","", 2, 128, 4);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I like this game very much", "I don’t like this game very much","", 2, 128, 5);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I prefer to study in the morning", "I prefer to study in the morning","", 2, 128, 6);
+
+
+-- Practice some more
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Let's practice some more!", "", "", 1, 129, 1);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "When do you need to go?", "When do you need to go?","", 2, 129, 2);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "study", "When do you need to study?","", 2, 129, 3);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "sleep", "When do you need to sleep?","", 2, 129, 4);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "What do you like to eat in the morning?", "What do you like to eat in the morning?","", 2, 129, 5);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "at night", "What do you like to eat at night?","", 2, 129, 6);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "in the afternoon", "What do you like to eat in the afternoon?","", 2, 129, 7);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Where do you need to go now?", "Where do you need to go now?","", 2, 129, 8);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "today", "Where do you need to go today?","", 2, 129, 9);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "tomorrow", "Where do you need to go tomorrow?","", 2, 129, 10);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Where do you study Japanese?", "Where do you study Japanese?","", 2, 129, 11);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "German", "Where do you study German?","", 2, 129, 12);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "French", "Where do you study French?","", 2, 129, 13);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "What do you like to drink for dinner?", "What do you like to drink for dinner?","", 2, 129, 14);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "breakfast", "What do you like to drink for breakfast?","", 2, 129, 15);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "lunch", "What do you like to drink for lunch?","", 2, 129, 16);
+
+   --Change into affirmative
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "This time you have to change the sentences into affirmative", "", "", 1, 130, 1);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I don’t study French everyday", "I study French everyday","", 2, 130, 2);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I don’t want to go to the mall alone", "I want to go to the mall alone","", 2,130, 3);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I don’t need to sleep now", "I need to sleep now","", 2, 130, 4);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I don’t love french fries", "I love french fries","", 2, 130, 5);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I don’t like to study in my city", "I like to study in my city","", 2, 130, 6);
+
+   -- Practice - lets continue
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Let's continue practicing", "", "", 1, 131, 1);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I drink water everyday", "I drink water everyday","", 2, 131, 2);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "sometimes", "I drink water sometimes","", 2, 131, 3);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "in the afternoon", "I drink water in the afternoon","", 2, 131, 4);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Do you play the piano at church?", "Do you play the piano at church?","", 2, 131, 5);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "guitar", "Do you play the guitar at church?","", 2, 131, 6);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "violin", "Do you play the violin at church?","", 2, 131, 7);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I play volleyball on the weekends", "I play volleyball on the weekends","", 2, 131, 8);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "basketball", "I play basketball on the weekends","", 2, 131, 9);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "tennis", "I play tennis on the weekends","", 2, 131, 10);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I love to speak English", "I love to speak English","", 2, 131, 11);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "German", "I love to speak German","", 2, 131, 12);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Spanish", "I love to speak Spanish","", 2, 131, 13);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I go to the park on weekends", "I go to the park on weekends","", 2, 131, 14);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "every week", "I go to the park every week","", 2, 131, 15);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "every day", "I go to the park every day","", 2, 131, 16);
+
+   --Change into interrogative
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Now, change the sentences into interrogative", "", "", 1, 132, 1);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "You need to study every day", "Do you need to study every day?","", 2, 132, 2);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "You study in the city with my brother", "Do You study in the city with my brother","", 2, 132, 3);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "You have a big house", "do You have a big house","", 2, 132, 4);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "You need to go to the store today", "do You need to go to the store today","", 2, 132, 5);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "You love to study languages", "do You love to study languages","", 2, 132, 6);
+
+--Practice
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Let's practice again", "", "", 1, 133, 1);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I want to go to the movies with you", "I want to go to the movies with you","", 2, 133, 2);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "to church", "I want to go to church with you","", 2, 133, 3);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "downtown", "I want to go downtown with you","", 2, 133, 4);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Do you eat rice and beans every day?", "Do you eat rice and beans every day?","", 2, 133, 5);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "potatoes and chicken", "Do you eat potatoes and chicken every day?","", 2, 133, 6);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "salad", "Do you eat salad every day?","", 2, 133, 7);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I only speak English with my teacher", "I only speak English with my teacher","", 2, 133, 8);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "friends", "I only speak English with my friends","", 2, 133, 9);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "family", "I only speak English with my family","", 2, 133, 10);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I prefer to drink a cup of milk for breakfast", "I prefer to drink a cup of milk for breakfast","", 2, 133, 11);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "coffee", "I prefer to drink a cup of coffee for breakfast","", 2, 133, 12);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "tea", "I prefer to drink a cup of tea for breakfast","", 2, 133, 13);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I love my parents a lot", "I love my parents a lot","", 2, 133, 14);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "teachers", "I love my teachers a lot","", 2, 133, 15);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "friends", "I love my friends a lot","", 2, 133, 16);
+
+--Change into affirmative
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Change the sentences into affirmative", "", "", 1, 134, 1);
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I don’t need to understand Chinese", "I need to understand Chinese","", 2, 134, 2);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "You don’t need to go there now", "You need to go there now","", 2, 134, 3);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I don’t love this house", "I love this house","", 2, 134, 4);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "you don’t play the guitar in the morning", "you play the guitar in the morning","", 2, 134, 5);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I don’t want to go to the store with you", "I want to go to the store with you","", 2, 134, 6);
+
+--Oral practice
+
+--Web talk
+
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "Are you logged in?", "","Are you logged in?", 1, 136, 1);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "No, Not yet", "","No, Not yet", 1, 136, 2);
+
+--I am a champion
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I am a champion", "","", 1, 137, 1);
+insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
+   ( "I have good friends", "I have good friends","", 2, 137, 2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

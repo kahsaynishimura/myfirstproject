@@ -297,7 +297,7 @@ public class PracticeActivity extends ActionBarActivity {
 
                             break;
                         case 5://only shows a video containing instructions. do not ask for audio back
-                            runOnUiThread(new Runnable() {
+                            /*runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
                                     final VideoView v = new VideoView(PracticeActivity.this);
@@ -325,7 +325,7 @@ public class PracticeActivity extends ActionBarActivity {
                                         }
                                     });
                                 }
-                            });
+                            });*/
 
                             break;
                     }
@@ -467,11 +467,11 @@ public class PracticeActivity extends ActionBarActivity {
             TextView tv3 = ((TextView) findViewById(R.id.recognizedText3));
             TextView tv4 = ((TextView) findViewById(R.id.recognizedText4));
             TextView tv5 = ((TextView) findViewById(R.id.recognizedText5));
-            tv1.setText(tv2.getText());
-            tv2.setText(tv3.getText());
-            tv3.setText(tv4.getText());
-            tv4.setText(tv5.getText());
-            tv5.setText(sentence);
+            tv5.setText(tv4.getText());
+            tv4.setText(tv3.getText());
+            tv3.setText(tv2.getText());
+            tv2.setText(tv1.getText());
+            tv1.setText(sentence);
         }
 
         @Override
