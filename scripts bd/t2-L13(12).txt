@@ -151,7 +151,7 @@ insert into script_entry( text_to_read, text_to_check, text_to_show, function_id
 insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
    ( "I like this game very much", "I don’t like this game very much","", 2, 128, 5);
 insert into script_entry( text_to_read, text_to_check, text_to_show, function_id, exercise_id, script_index) values
-   ( "I prefer to study in the morning", "I prefer to study in the morning","", 2, 128, 6);
+   ( "I prefer to study in the morning", "I don’t prefer to study in the morning","", 2, 128, 6);
 
 
 -- Practice some more
