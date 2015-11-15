@@ -163,6 +163,8 @@ public class PracticeActivity extends ActionBarActivity {
     }
 
     private void runScriptEntry() {
+        //gravar - start_time na tabela de user_script
+        //
         if (current.getShouldRunScript()) {
 
             current.setShouldRunScript(false);//prove to me again that I can execute everything ->go to the next exercise.
@@ -182,7 +184,6 @@ public class PracticeActivity extends ActionBarActivity {
                             LinearLayout parent = (LinearLayout) findViewById(R.id.contentFrame);
                             child.setText(s.getTextToShow());
                             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-
 
                             child.setLayoutParams(params);
                             ArrayList<TextView> items = new ArrayList<>();
@@ -371,8 +372,6 @@ public class PracticeActivity extends ActionBarActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-
-
                 speech.startListening(recognizerIntent);
             }
         });
@@ -393,9 +392,7 @@ public class PracticeActivity extends ActionBarActivity {
 
         @Override
         public void onReadyForSpeech(Bundle params) {
-
             ((ImageButton) findViewById(R.id.mic)).setImageDrawable(getDrawable(R.drawable.mic_0_enabled));
-
             Log.i(LOG_TAG, "onReadyForSpeech");
         }
 
@@ -506,7 +503,8 @@ public class PracticeActivity extends ActionBarActivity {
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(PracticeActivity.this);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt("wrong_sentence_count", sharedPreferences.getInt("wrong_sentence_count", 0) + 1);
-
+                //TODO: update number_attemps to +1 on the current execution
+             // db.updateNumberAttempts  (current.getCurrentScriptEntry().get_id(),lessonId);
                 editor.commit();
             }
             updateLastSentences(recognizedSentence);
@@ -516,13 +514,11 @@ public class PracticeActivity extends ActionBarActivity {
 
         @Override
         public void onPartialResults(Bundle partialResults) {
-
             Log.i(LOG_TAG, "onPartialResults");
         }
 
         @Override
         public void onEvent(int eventType, Bundle params) {
-
             Log.i(LOG_TAG, "onEvent");
         }
 
@@ -565,7 +561,6 @@ public class PracticeActivity extends ActionBarActivity {
 
     }
 
-
     public void checkConnection() {
         ConnectivityManager cm =
                 (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -596,7 +591,6 @@ public class PracticeActivity extends ActionBarActivity {
             builder.show();
         }
     }
-
 
     public Lesson updateTitleWithLessonName(Integer lessonId) {
         Lesson l = null;

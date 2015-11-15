@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,36 +31,54 @@ public class LessonCompletedActivity extends ActionBarActivity {
 
         long millis = sharedPreferences.getLong("start_time", 0L);
         Date startTime = new Date(millis);
-        Integer correctSentenceCount = sharedPreferences.getInt("correct_sentence_count", 0);
+        Integer totalHits = sharedPreferences.getInt("correct_sentence_count", 0);
         Integer wrongSentenceCount = sharedPreferences.getInt("wrong_sentence_count", 0);
-        Integer percentageWrong = (wrongSentenceCount * 100) / correctSentenceCount;
+        Integer percentageWrong = (wrongSentenceCount * 100) / totalHits;
 
         //no matter what happens, if the student gets here, he is rewarded.
-        Integer userPoints = 2;
+        Integer totalPoints = 2;
         ImageView userPointsImage = (ImageView) findViewById(R.id.user_points);
         userPointsImage.setImageDrawable(getDrawable(R.drawable.pointstwo));
 
         if (percentageWrong > 60 && percentageWrong <= 100) {
-            userPoints = 4;
+            totalPoints = 4;
             userPointsImage.setImageDrawable(getDrawable(R.drawable.pointsfour));
         } else if (percentageWrong > 30 && percentageWrong <= 60) {
-            userPoints = 6;
+            totalPoints = 6;
             userPointsImage.setImageDrawable(getDrawable(R.drawable.pointssix));
         } else if (percentageWrong > 10 && percentageWrong <= 30) {
-            userPoints = 8;
+            totalPoints = 8;
             userPointsImage.setImageDrawable(getDrawable(R.drawable.pointseight));
         } else if (percentageWrong <= 10) {
-            userPoints = 10;
+            totalPoints = 10;
             userPointsImage.setImageDrawable(getDrawable(R.drawable.pointsten));
         }
         DateFormat df = DateFormat.getTimeInstance();
+        Date finishTime = new Date();
         ((TextView) findViewById(R.id.txt_start_time)).setText(getString(R.string.start_time) + ": " + df.format(startTime));
-        ((TextView) findViewById(R.id.txt_finish_time)).setText(getString(R.string.finish_time) + ": " + df.format(new Date()));
-        ((TextView) findViewById(R.id.txt_correct)).setText(getString(R.string.correct) + ": " + correctSentenceCount);
+        ((TextView) findViewById(R.id.txt_finish_time)).setText(getString(R.string.finish_time) + ": " + df.format(finishTime));
+        ((TextView) findViewById(R.id.txt_correct)).setText(getString(R.string.correct) + ": " + totalHits);
         ((TextView) findViewById(R.id.txt_wrong_percentage)).setText(getString(R.string.errors_percentage) + ": " + percentageWrong + "%");
+        savePracticeSummary(sharedPreferences.getInt("user_id", 0), sharedPreferences.getInt("lesson_id", 0),
+                totalHits, percentageWrong, startTime.getTime(), finishTime.getTime(), totalPoints);
     }
 
-    public void saveLastLessonCompletedId(SharedPreferences sharedPreferences) {//TODO: save dates as well
+    private void savePracticeSummary(int userId, int lessonId, Integer totalHits, Integer percentageWrong, Long startTime, Long finishTime, Integer totalPoints) {
+        DBHandler db = null;
+
+        try {
+            InputStream is = getBaseContext().getAssets()
+                    .open(DBHandler.DATABASE_NAME);
+            db = new DBHandler(this, is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (db != null) {
+            String id=  db.addPracticeHistory(userId, lessonId, totalHits, percentageWrong, startTime.toString(), finishTime.toString(), totalPoints);
+            }
+    }
+
+    public void saveLastLessonCompletedId(SharedPreferences sharedPreferences) {
 
         DBHandler db = null;
 
@@ -71,7 +90,7 @@ public class LessonCompletedActivity extends ActionBarActivity {
             e.printStackTrace();
         }
         if (db != null) {
-             db.saveLastLessonCompletedId(sharedPreferences.getInt("user_id", 0), sharedPreferences.getInt("lesson_id", 0));
+            db.saveLastLessonCompletedId(sharedPreferences.getInt("user_id", 0), sharedPreferences.getInt("lesson_id", 0));
         }
     }
 

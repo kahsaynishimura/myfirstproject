@@ -31,6 +31,7 @@ public class DBHandler {
     private static final String TABLE_EXERCISE = "exercise";
     private static final String TABLE_SCRIPT_ENTRY = "script_entry";
     private static final String TABLE_USER = "user";
+    private static final String TABLE_PRACTICE_HISTORY = "practice_history";
 
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_LESSON_ID = "lesson_id";
@@ -45,6 +46,13 @@ public class DBHandler {
     private static final String COLUMN_TEXT_TO_CHECK = "text_to_check";
     private static final String COLUMN_SCRIPT_INDEX = "script_index";
     private static final String COLUMN_TEXT_TO_READ = "text_to_read";
+    private static final String COLUMN_USER_ID = "user_id";
+    private static final String COLUMN_TOTAL_HITS = "total_hits";
+    private static final String COLUMN_PERCENTAGE_WRONG = "percentage_wrong";
+    private static final String COLUMN_START_TIME = "start_time";
+    private static final String COLUMN_FINISH_TIME = "finish_time";
+    private static final String COLUMN_TOTAL_POINTS = "total_points";
+
     private DBHelper DBHelper;
     private SQLiteDatabase db = null;
 
@@ -55,16 +63,17 @@ public class DBHandler {
             String destinationPath = "/data/data/" + ctx.getPackageName()
                     + "/databases";
             File f = new File(destinationPath);
-           /*if (!f.exists()) {*/
+            //  if (!f.exists()) {
             boolean bool = f.mkdirs();
             Log.i("DBHandler", "Made directory for DB: " + bool);
             bool = f.createNewFile();
             Log.i("DBHandler", "DB File created: " + bool);
                 /* copy the db from the assets folder into
+
                  the databases folder*/
             DBHandler.CopyDB(inputStream, new FileOutputStream(destinationPath
                     + "/" + DBHandler.DATABASE_NAME));
-            // }
+            //    }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -151,13 +160,30 @@ public class DBHandler {
         }
     }
 
+    public String addPracticeHistory(Integer userId, Integer lessonId, Integer totalHits, Integer percentageWrong, String startTime, String finishTime, Integer totalPoints) {
+        ContentValues insertValues = new ContentValues();
+        insertValues.put(COLUMN_USER_ID, userId);
+        insertValues.put(COLUMN_LESSON_ID, lessonId);
+        insertValues.put(COLUMN_START_TIME, startTime);//mili
+        insertValues.put(COLUMN_FINISH_TIME, finishTime);//mili
+        insertValues.put(COLUMN_TOTAL_HITS, totalHits);
+        insertValues.put(COLUMN_PERCENTAGE_WRONG, percentageWrong);
+        insertValues.put(COLUMN_TOTAL_POINTS, totalPoints);
+
+        open();
+        long rowId = db.insert(TABLE_PRACTICE_HISTORY, null, insertValues);
+
+        db.close();
+        return rowId + "";
+
+    }
 
     public Boolean saveLastLessonCompletedId(Integer userId, Integer lessonCompletedId) {
         ContentValues insertValues = new ContentValues();
         insertValues.put(COLUMN_LAST_COMPLETED_LESSON_ID, lessonCompletedId.toString());
         open();
         Integer numberRows = db.update(
-                TABLE_USER, insertValues, COLUMN_ID + " = "+userId,null);
+                TABLE_USER, insertValues, COLUMN_ID + " = " + userId, null);
 
         db.close();
         return numberRows > 0;
@@ -237,5 +263,4 @@ public class DBHandler {
 
         return exercises;
     }
-
 }
