@@ -1,0 +1,266 @@
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("","","",,,1);
+
+insert into exercise (lesson_id,_id,name,transition_image)values(11,150,"Speak right now","speakrightnow");
+insert into exercise (lesson_id,_id,name,transition_image)values(11,151,"Conversation","conversation");
+insert into exercise (lesson_id,_id,name,transition_image)values(11,152,"Oral Practice","oralpractice");
+insert into exercise (lesson_id,_id,name,transition_image)values(11,153,"Practice","practice");
+insert into exercise (lesson_id,_id,name,transition_image)values(11,154,"Change to negative","changetonegative");
+insert into exercise (lesson_id,_id,name,transition_image)values(11,155,"Practice","practice");
+insert into exercise (lesson_id,_id,name,transition_image)values(11,156,"Change to affirmative","changetoaffirmative");
+insert into exercise (lesson_id,_id,name,transition_image)values(11,157,"Practice","practice");
+insert into exercise (lesson_id,_id,name,transition_image)values(11,158,"Change into interrogative","Changeintointerrogative");
+insert into exercise (lesson_id,_id,name,transition_image)values(11,159,"Practice","practice");
+insert into exercise (lesson_id,_id,name,transition_image)values(11,160,"Answer the questions","answerthequestions");
+
+
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Speak right now","","",1,150,1);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you understand English?","Do you understand English?","Do you understand English?",2,150,2);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you understand Japanese?","Do you understand Japanese?","Do you understand Japanese?",2,150,3);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you understand Italian?","Do you understand Italian?","Do you understand Italian?",2,150,4);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Yes, I do. I understand English.","Yes, I do. I understand English.","Yes, I do. I understand English.",2,150,5);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Yes, I do. I understand German.","Yes, I do. I understand German.","Yes, I do. I understand German.",2,150,6);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Yes, I do. I understand Portuguese.","Yes, I do. I understand Portuguese.","Yes, I do. I understand Portuguese.",2,150,7);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t understand English.","I don’t understand English.","I don’t understand English.",2,150,8);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t understand Spanish.","I don’t understand Spanish.","I don’t understand Spanish.",2,150,9);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t understand French.","I don’t understand French.","I don’t understand French.",2,150,10);
+
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Conversation","","",1,151,1);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you understand Spanish?","Do you understand Spanish?","Do you understand Spanish?",2,151,2);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("No, I don’t. I only understand English.","No, I don’t. I only understand English.","No, I don’t. I only understand English.",2,151,3);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you see your Italian teacher on weekends?","Do you see your Italian teacher on weekends?","Do you see your Italian teacher on weekends?",2,151,4);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("No, I don’t. I don’t see my Italian teacher on weekends.","No, I don’t. I don’t see my Italian teacher on weekends.","No, I don’t. I don’t see my Italian teacher on weekends.",2,151,5);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you want to go to the mall with me now?","Do you want to go to the mall with me now?","Do you want to go to the mall with me now?",2,151,6);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Sorry, but Ihave to study English now.","Sorry, but Ihave to study English now.","Sorry, but Ihave to study English now.",2,151,7);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you understand Chinese?","Do you understand Chinese?","Do you understand Chinese?",2,151,8);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Sorry, I don’t understand Chinese.","Sorry, I don’t understand Chinese.","Sorry, I don’t understand Chinese.",2,151,9);
+
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Oral Practice","","",1,152,1);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Where do you study English?","Where do you study English?","Where do you study English?",2,152,2);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you speakEnglish at home?","Do you speakEnglish at home?","Do you speakEnglish at home?",2,152,3);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you have a pet?","Do you have a pet?","Do you have a pet?",2,152,4);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you want to have a pet?","Do you want to have a pet?","Do you want to have a pet?",2,152,5);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you want to study Spanish at Wizard?","Do you want to study Spanish at Wizard?","Do you want to study Spanish at Wizard?",2,152,6);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you want to go to the movies today?","Do you want to go to the movies today?","Do you want to go to the movies today?",2,152,7);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you have coffee and milk with your breakfast?","Do you have coffee and milk with your breakfast?","Do you have coffee and milk with your breakfast?",2,152,8);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you go to school on weekends?","Do you go to school on weekends?","Do you go to school on weekends?",2,152,9);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Where do you want to go tomorrow?","Where do you want to go tomorrow?","Where do you want to go tomorrow?",2,152,10);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you have breakfast with your parents every day?","Do you have breakfast with your parents every day?","Do you have breakfast with your parents every day?",2,152,11);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("What do you like to eat for dinner?","What do you like to eat for dinner?","What do you like to eat for dinner?",2,152,12);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you study every day?","Do you study every day?","Do you study every day?",2,152,13);
+
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Practice","","",1,153,1);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t understand Italian","I don’t understand Italian","I don’t understand Italian",2,153,2);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Chinese","I don’t understand Chinese","",2,153,3);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("German","I don’t understand German","",2,153,4);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I only eat meet for lunch","I only eat meet for lunch","",2,153,5);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("on weekends","I only eat meet on weekends","",2,153,6);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("for dinner","I only eat meet for dinner","",2,153,7);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("You have to speak German too","You have to speak German too","",2,153,8);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("study Japanese","You have to study Japanese too","",2,153,9);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("study Chinese","You have to study Chinese too","",2,153,10);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I have a new motorcycle","I have a new motorcycle","",2,153,11);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("car","I have a new car","",2,153,12);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("bicycle","I have a new bicycle","",2,153,13);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I want to go to the park","I want to go to the park","",2,153,14);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("movies","I want to go to the movies","",2,153,15);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("soccer game","I want to go to the soccer game","",2,153,16);
+
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Change to negative","","",1,154,1);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I want to study spanish tomorrow.","I don't want to study spanish tomorrow.","",2,154,2);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I want to understand Chinese.","I don't want to understand Chinese.","",2,154,3);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I love to study Japanese.","I don't love to study Japanese.","",2,154,4);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I like to go downtown.","I don't like to go downtown.","",2,154,5);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I want to go to the movies.","I don't want to go to the movies.","",2,154,6);
+
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Practice","","",1,155,1);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I play chess with my friends at school.","I play chess with my friends at school.","",2,155,2);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("at home","I play chess with my friends at home.","",2,155,3);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("on the weekends","I play chess with my friends on the weekends.","",2,155,4);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Where do you like to go on the weekends?","Where do you like to go on the weekends?","",2,155,5);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("play","Where do you like to play on the weekends?","",2,155,6);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("eat","Where do you like to eat on the weekends?","",2,155,7);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I like to play the guitar at night.","I like to play the guitar at night.","",2,155,8);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("in the afternoon","I like to play the guitar in the afternoon.","",2,155,9);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("at the park","I like to play the guitar at the park.","",2,155,10);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I love my family","I love my family","",2,155,11);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("sister","I love my sister","",2,155,12);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("brother","I love my brother","",2,155,13);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t want to go to school","I don’t want to go to school","",2,155,14);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("the movies","I don’t want to go to the movies","",2,155,15);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("church","I don’t want to go to church","",2,155,16);
+
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Change to affirmative","","",1,156,1);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t understand you children","I understand you children","",2,156,2);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t like to study with you","I like to study with you","",2,156,3);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("We don’t love to go to the movies","We love to go to the movies","",2,156,4);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t like to play tennis at schoo","I like to play tennis at schoo","",2,156,5);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t go to the park at night","I go to the park at night","",2,156,6);
+
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Practice","","",1,157,1);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t like to drink water for breakfast.","I like to drink water for breakfast.","",2,157,2);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("milk","I like to drink milk for breakfast.","",2,157,3);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("coffee","I like to drink coffee for breakfast.","",2,157,4);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t have time to go there today.","I have time to go there today.","",2,157,5);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("now","I don’t have time to go there now.","",2,157,6);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("tomorrow","I have time to go there tomorrow.","",2,157,7);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t sleep at night.","I sleep at night.","",2,157,8);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("there","I sleep there.","",2,157,9);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("in the afternoon","I sleep in the afternoon.","",2,157,10);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t play the violin at school.","I play the violin at school.","",2,157,11);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("guitar","I play the guitar at school.","",2,157,12);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("piano","I play the piano at school.","",2,157,13);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("I don’t linke this house.","I linke this house.","",2,157,14);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("book","I linke this book.","",2,157,15);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("car","I linke this car.","",2,157,16);
+
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Change into interrogative","","",1,158,1);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("You like your new bicycle.","Do you like your new bicycle?","",2,158,2);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("You have to understand French.","Do you have to understand French?","",2,158,3);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("You love to play with you pet.","Do you love to play with you pet?","",2,158,4);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("You want to go to the park today.","Do you want to go to the park today?","",2,158,5);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("You have to understand Chinese.","Do you have to understand Chinese?","",2,158,6);
+
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Practice","","",1,159,1);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you like your dog?","Do you like your dog?","",2,159,2);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("cat","Do you like your cat?","",2,159,3);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("motorcycle","Do you like your motorcycle?","",2,159,4);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("What do you like to drink for lunch?","What do you like to drink for lunch?","",2,159,5);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("dinner","What do you like to drink for dinner?","",2,159,6);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("breakfast","What do you like to drink for breakfast?","",2,159,7);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("We love to eat bananas.","Do we love to eat bananas?","",2,159,8);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("ice cream","Do we love to eat ice cream?","",2,159,9);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("pancakes","Do we love to eat pancakes?","",2,159,10);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Where do you study German?","Where do you study German?","",2,159,11);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("English","Where do you study English?","",2,159,12);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Spanish","Where do you study Spanish?","",2,159,13);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("What do you want to study?","What do you want to study?","",2,159,14);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("drink","What do you want to drink?","",2,159,15);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("play","What do you want to play?","",2,159,16);
+
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Answer the questions","","",1,160,1);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you study downtown","","",2,160,2);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you like to eat fish for lunch?","","",2,160,3);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you have to go to church every week?","","",2,160,4);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you play volleybol at school?","","",2,160,5);
+insert into script_entry(text_to_read,text_to_check,text_to_show,function_id,exercise_id,script_index)values
+			("Do you love to go to the park?","","",2,160,6);
